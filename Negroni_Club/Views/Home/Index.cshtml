@@ -1,0 +1,14 @@
+﻿
+@{
+    DataManager dataManager = ViewBag.DataManager;
+}
+
+@await Html.PartialAsync("BannerPartial", dataManager.TextFields.GetTextFieldByCodeWord("Banner"))
+@await Html.PartialAsync("AboutUsPartial", dataManager.TextFields.GetTextFieldByCodeWord("AboutUs"))
+@await Html.PartialAsync("SpecialMenuPartial")
+@await Html.PartialAsync("MenuPartial",dataManager.DishesCategories.GetDishesCategories())
+@await Html.PartialAsync("OurTeamPartial", dataManager.Teammates.GetTeammates())
+@await Html.PartialAsync("GalleryPartial")
+@await Html.PartialAsync("BlogPartial")
+@await Html.PartialAsync("ContactUsPartial")
+

@@ -1,0 +1,59 @@
+﻿@model IQueryable<Teammate>
+
+<div id="our_team" class="team-main pad-top-100 pad-bottom-100 parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <h2 class="block-title text-center">
+                        Наша Команда
+                    </h2><br />
+                    @*<p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>*@
+                </div>
+                <div class="team-box">
+
+                    <div class="row">
+                        <div id="owl-team">
+                            @if (Model.Any())
+                            {
+                                foreach (Teammate entyty in Model)
+                                {
+                                    <div class="sf-team">
+                                        <div class="thumb">
+                                            <a href="#"><img src="images/@entyty.TitleImagePath?width=390&height=500" alt=""></a>
+                                        </div>
+                                        <div class="text-col">
+                                            <h2>@entyty.Title</h2>
+                                            <h3>@entyty.Subtitle</h3>
+                                            <ul class="team-social">
+                                                @if (entyty.FacebookLink != null)
+                                                {
+                                                    <li><a href="@entyty.FacebookLink"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                }
+                                                @if (entyty.VKLink != null)
+                                                {
+                                                    <li><a href="@entyty.VKLink"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                                }
+                                                @if (entyty.InstagramLink != null)
+                                                {
+                                                    <li><a href="@entyty.InstagramLink"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                </div>
+                <!-- end team-box -->
+
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>

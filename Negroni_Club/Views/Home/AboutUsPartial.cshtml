@@ -1,0 +1,32 @@
+﻿@model TextField
+
+<div id="about" class="about-main pad-top-100 pad-bottom-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <h2 class="block-title">@Model.Title</h2>
+                    <h3>@Model.Subtitle</h3>
+                    <div>
+                        @Html.Raw(Model.Text)
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="about-images">
+                        <div class="about-images">
+                            <img class="about-main" src="~/images/@Model.TitleImages.FirstOrDefault(x => x.CodeWord == "AboutUsBigTitleImage").TitleImagePath?width=410&height=410" alt="About Main Image">
+                            <img class="about-inset" src="~/images/@Model.TitleImages.FirstOrDefault(x => x.CodeWord == "AboutUsSmallTitleImage").TitleImagePath?width=160&height=160" alt="About Inset Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+</div>
+

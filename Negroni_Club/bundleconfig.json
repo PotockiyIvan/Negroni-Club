@@ -1,0 +1,19 @@
+[
+  {
+    "outputFileName": "wwwroot/js/scripts.js",
+    "inputFiles": [
+      "wwwroot/js/all.js",
+      "wwwroot/js/bootstrap.min.js",
+      "wwwroot/js/custom.js",
+      "wwwroot/js/modernizer.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bundle.js",
+    "inputFiles": [
+      "wwwroot/js/custom.js",
+      "wwwroot/js/bootstrap.min.js",
+      "wwwroot/js/all.js"
+    ]
+  }
+]

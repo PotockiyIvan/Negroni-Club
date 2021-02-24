@@ -1,0 +1,54 @@
+﻿
+@model IQueryable<Teammate>
+
+@{
+    string strTitle = "Панель администратора";
+    ViewBag.Title = strTitle;
+}
+
+<div id="banner" class="banner full-screen-mode parallax">
+    <div class="container pr">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="banner-static">
+                <div class="banner-text">
+
+                    <div class="banner-cell">
+
+                        <h1>@strTitle</h1>
+                        <div>
+                            <h2>Наша Команда</h2>
+                            <div class="div-box">
+                                <a asp-area="Admin" asp-controller="Teammate" asp-action="EditTeammate" asp-route-id="">Добавить нового члена команды</a>
+                            </div>
+                            @if (Model.Any())
+                            {
+                                <div>
+                                    @foreach (Teammate entity in Model)
+                                    {
+                                        <div>
+                                            <h4>@($"{entity.Title}")</h4>
+                                            |
+                                            <a asp-area="Admin" asp-controller="Teammate" asp-action="EditTeammate" asp-route-id="@entity.Id">редактировать</a>
+                                            |
+                                            <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Teammate" asp-action="Delete" method="post">
+                                                <input type="hidden" name="id" value="@entity.Id">
+                                                <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                                            </form>
+                                            |
+                                        </div><br />
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <!-- end banner-cell -->
+                </div>
+                <!-- end banner-text -->
+            </div>
+            <!-- end banner-static -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end banner -->

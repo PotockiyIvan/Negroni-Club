@@ -1,0 +1,54 @@
+﻿
+<div id="loader">
+    <div id="status"></div>
+</div>
+<!-- site header -->
+<div id="site-header">
+    <!-- header -->
+    <header id="header" class="header-block-top">
+        <!-- end container-fluid --><!--container-fluid - растягиваеи по всему экрану-->
+        <div class="container">
+            <!-- end row -->
+            <div class="row">
+                <div class="main-menu">
+                    <!-- navigation bar -->
+                    <nav class="navbar navbar-default" id="mainNav">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="logo">
+                                <a class="navbar-brand js-scroll-trigger logo-header" href="#">
+                                    <img src="~/images/logo_negr.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="#banner">На главную</a></li>
+                                <li><a href="#about">О нас</a></li>
+                                <li><a href="#menu">Меню</a></li>
+                                <li><a href="#our_team">Наша Команда</a></li>
+                                <li><a href="#gallery">Галерея</a></li>
+                                <li><a href="#blog">Блог</a></li>
+                                @*<li><a href="#pricing">pricing</a></li>
+                                    <li><a href="#reservation">Reservaion</a></li>*@
+                                <li><a href="#footer">Свяжись с нами</a></li>
+                                <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Админ</a></li>
+                            </ul>
+                        </div>
+                        <!-- end nav-collapse -->
+                    </nav>
+                    <!-- end navigation bar -->
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container-fluid -->
+    </header>
+    <!-- end header -->
+</div>
+<!-- end site header -->

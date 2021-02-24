@@ -1,0 +1,44 @@
+﻿@model LoginViewModel
+
+<div id="banner" class="banner full-screen-mode parallax">
+    <div class="container pr">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="banner-static">
+                <div class="banner-text">
+                    <div class="banner-cell">
+                        <div id="Login-style">
+                            <h1>Вход в личный кабинет</h1>
+                            <form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+                                <div asp-validation-summary="All"></div>
+                                <div id="Login-input">
+                                    <label asp-for="UserName "></label>
+                                    <input asp-for="UserName" />
+                                    <span asp-validation-for="UserName"></span>
+                                </div>
+                                <div>
+                                    <label asp-for="Password"></label>
+                                    <input asp-for="Password" />
+                                    <span asp-validation-for="Password"></span>
+                                </div>
+                                <div>
+                                    <label asp-for="RememberMe"></label>
+                                    <input asp-for="RememberMe" />
+                                    <span asp-validation-for="RememberMe"></span>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Войти" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end banner-cell -->
+                </div>
+                <!-- end banner-text -->
+            </div>
+            <!-- end banner-static -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end banner -->
