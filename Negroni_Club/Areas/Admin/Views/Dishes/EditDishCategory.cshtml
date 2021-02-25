@@ -20,25 +20,10 @@
                 <input asp-for="Title" />
                 <span asp-validation-for="Title"></span>
             </div>
-            @*<div class="div-box">
-                <label asp-for="Subtitle"></label>
-                <input asp-for="Subtitle" />
-                <span asp-validation-for="Subtitle"></span>
-            </div>
             <div class="div-box">
-                <label asp-for="Text"></label>
-                <textarea asp-for="Text"></textarea>
-                <span asp-validation-for="Text"></span>
-            </div>*@
-            <div class="div-box">
-                <label asp-for="TitleIconPath"></label>
-                <input type="file" name="titleImageFile" id="titleImageFile" />
-                <div>
-                    <img class="img-block" src="~/images/dish images/@Model.TitleIconPath" />
-                </div>
+                <a asp-area="Admin" asp-controller="Dishes" asp-action="SelectCategoryIcon" asp-route-id="@Model.Id" method="post">Выбрать иконку</a>
             </div>
             <input type="submit" value="Сохранить" />
         </form>
-        @await Html.PartialAsync("IconListPartial")
     </div>
 </div>

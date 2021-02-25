@@ -176,13 +176,21 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return RedirectToAction(nameof(DishesController.Index), nameof(DishesController).CutController());
         }
 
-        //[HttpPost]
-        //public IActionResult SelectIcon(string titleIconPath)
-        //{
+        public IActionResult SelectCategoryIcon(Guid id)
+        {
+            var entity = id == default ? new DishesСategory() : dataManager.DishesCategories.GetDishesCategoryById(id);
+            return View(entity);
+        }
 
+        [HttpPost]
+        public IActionResult SelectCategoryIcon(Guid id, string titleIconPath)
+        {
+            var category = dataManager.DishesCategories.GetDishesCategoryById(id);
+            category.TitleIconPath = titleIconPath;
+            dataManager.DishesCategories.SaveDishesCategory(category);
 
-        //    return RedirectToAction(nameof(DishesController.EditDishCategory), nameof(DishesController).CutController(),new DishesСategory {TitleIconPath = titleIconPath });
-        //}
+            return RedirectToAction(nameof(DishesController.EditDishCategory), nameof(DishesController).CutController());
+        }
 
         #endregion
     }

@@ -1,0 +1,534 @@
+﻿@model DishesСategory
+
+<!DOCTYPE html>
+<!--
+  Flaticon icon font: Flaticon
+  Creation date: 18/02/2021 03:11
+-->
+<html>
+
+<head>
+    <title>@*Выберите иконку для категории.*@</title>
+    <link rel="stylesheet" type="text/css" href="flaticon.css">
+    <link rel="stylesheet" href="~/css/SelectIconStyles.css" />
+    <meta charset="UTF-8">
+</head>
+
+<body class="characters-off">
+
+    <section id="glyphs">
+
+        
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-rum"></div>
+            <form class="author-name" id="@Model.Id" asp-area="Admin" asp-controller="Dishes" asp-action="SelectCategoryIcon" method="post">
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="titleIconPath" value="flaticon-rum">
+                <input type="submit" value="Выбрать" />
+            </form>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-beer"></div>
+            <div class="class-name">.flaticon-beer</div>
+            <div class="author-name">Author: <a data-file="002-beer" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-drink"></div>
+            <div class="class-name">.flaticon-drink</div>
+            <div class="author-name">Author: <a data-file="003-drink" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pagoda"></div>
+            <div class="class-name">.flaticon-pagoda</div>
+            <div class="author-name">Author: <a data-file="004-pagoda" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-barrel"></div>
+            <div class="class-name">.flaticon-barrel</div>
+            <div class="author-name">Author: <a data-file="005-barrel" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-tequila"></div>
+            <div class="class-name">.flaticon-tequila</div>
+            <div class="author-name">Author: <a data-file="006-tequila" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-perfume"></div>
+            <div class="class-name">.flaticon-perfume</div>
+            <div class="author-name">Author: <a data-file="007-perfume" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-steak"></div>
+            <div class="class-name">.flaticon-steak</div>
+            <div class="author-name">Author: <a data-file="008-steak" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-fork"></div>
+            <div class="class-name">.flaticon-fork</div>
+            <div class="author-name">Author: <a data-file="009-fork" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-vase"></div>
+            <div class="class-name">.flaticon-vase</div>
+            <div class="author-name">Author: <a data-file="010-vase" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-salad"></div>
+            <div class="class-name">.flaticon-salad</div>
+            <div class="author-name">Author: <a data-file="011-salad" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-big-ben"></div>
+            <div class="class-name">.flaticon-big-ben</div>
+            <div class="author-name">Author: <a data-file="012-big-ben" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-sandwich"></div>
+            <div class="class-name">.flaticon-sandwich</div>
+            <div class="author-name">Author: <a data-file="013-sandwich" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-barrel-1"></div>
+            <div class="class-name">.flaticon-barrel-1</div>
+            <div class="author-name">Author: <a data-file="014-barrel-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-agave"></div>
+            <div class="class-name">.flaticon-agave</div>
+            <div class="author-name">Author: <a data-file="015-agave" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-burger"></div>
+            <div class="class-name">.flaticon-burger</div>
+            <div class="author-name">Author: <a data-file="016-burger" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-tequila-1"></div>
+            <div class="class-name">.flaticon-tequila-1</div>
+            <div class="author-name">Author: <a data-file="017-tequila-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-rum-1"></div>
+            <div class="class-name">.flaticon-rum-1</div>
+            <div class="author-name">Author: <a data-file="018-rum-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-noodles"></div>
+            <div class="class-name">.flaticon-noodles</div>
+            <div class="author-name">Author: <a data-file="019-noodles" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-sandwich-1"></div>
+            <div class="class-name">.flaticon-sandwich-1</div>
+            <div class="author-name">Author: <a data-file="020-sandwich-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-tray"></div>
+            <div class="class-name">.flaticon-tray</div>
+            <div class="author-name">Author: <a data-file="021-tray" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-drink-1"></div>
+            <div class="class-name">.flaticon-drink-1</div>
+            <div class="author-name">Author: <a data-file="022-drink-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-wheat"></div>
+            <div class="class-name">.flaticon-wheat</div>
+            <div class="author-name">Author: <a data-file="023-wheat" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-bartender"></div>
+            <div class="class-name">.flaticon-bartender</div>
+            <div class="author-name">Author: <a data-file="024-bartender" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-bottle"></div>
+            <div class="class-name">.flaticon-bottle</div>
+            <div class="author-name">Author: <a data-file="025-bottle" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-wine"></div>
+            <div class="class-name">.flaticon-wine</div>
+            <div class="author-name">Author: <a data-file="026-wine" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-wine-1"></div>
+            <div class="class-name">.flaticon-wine-1</div>
+            <div class="author-name">Author: <a data-file="027-wine-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-cocktail"></div>
+            <div class="class-name">.flaticon-cocktail</div>
+            <div class="author-name">Author: <a data-file="028-cocktail" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-shaker"></div>
+            <div class="class-name">.flaticon-shaker</div>
+            <div class="author-name">Author: <a data-file="029-shaker" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-brandy"></div>
+            <div class="class-name">.flaticon-brandy</div>
+            <div class="author-name">Author: <a data-file="030-brandy" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-water"></div>
+            <div class="class-name">.flaticon-water</div>
+            <div class="author-name">Author: <a data-file="031-water" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-cocktail-1"></div>
+            <div class="class-name">.flaticon-cocktail-1</div>
+            <div class="author-name">Author: <a data-file="032-cocktail-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-turkey"></div>
+            <div class="class-name">.flaticon-turkey</div>
+            <div class="author-name">Author: <a data-file="035-turkey" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-sandwich-2"></div>
+            <div class="class-name">.flaticon-sandwich-2</div>
+            <div class="author-name">Author: <a data-file="036-sandwich-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-tequila-2"></div>
+            <div class="class-name">.flaticon-tequila-2</div>
+            <div class="author-name">Author: <a data-file="037-tequila-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-room-service"></div>
+            <div class="class-name">.flaticon-room-service</div>
+            <div class="author-name">Author: <a data-file="038-room-service" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-chop"></div>
+            <div class="class-name">.flaticon-chop</div>
+            <div class="author-name">Author: <a data-file="039-chop" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-wine-2"></div>
+            <div class="class-name">.flaticon-wine-2</div>
+            <div class="author-name">Author: <a data-file="040-wine-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-whiskey"></div>
+            <div class="class-name">.flaticon-whiskey</div>
+            <div class="author-name">Author: <a data-file="041-whiskey" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-coconut"></div>
+            <div class="class-name">.flaticon-coconut</div>
+            <div class="author-name">Author: <a data-file="042-coconut" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pitcher"></div>
+            <div class="class-name">.flaticon-pitcher</div>
+            <div class="author-name">Author: <a data-file="043-pitcher" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pie"></div>
+            <div class="class-name">.flaticon-pie</div>
+            <div class="author-name">Author: <a data-file="044-pie" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-soda"></div>
+            <div class="class-name">.flaticon-soda</div>
+            <div class="author-name">Author: <a data-file="045-soda" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pint-of-beer"></div>
+            <div class="class-name">.flaticon-pint-of-beer</div>
+            <div class="author-name">Author: <a data-file="046-pint-of-beer" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-burger-1"></div>
+            <div class="class-name">.flaticon-burger-1</div>
+            <div class="author-name">Author: <a data-file="047-burger-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-hot-drink"></div>
+            <div class="class-name">.flaticon-hot-drink</div>
+            <div class="author-name">Author: <a data-file="048-hot-drink" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-rice"></div>
+            <div class="class-name">.flaticon-rice</div>
+            <div class="author-name">Author: <a data-file="049-rice" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-tequila-3"></div>
+            <div class="class-name">.flaticon-tequila-3</div>
+            <div class="author-name">Author: <a data-file="050-tequila-3" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-taco"></div>
+            <div class="class-name">.flaticon-taco</div>
+            <div class="author-name">Author: <a data-file="051-taco" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-beer-1"></div>
+            <div class="class-name">.flaticon-beer-1</div>
+            <div class="author-name">Author: <a data-file="052-beer-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-wheat-1"></div>
+            <div class="class-name">.flaticon-wheat-1</div>
+            <div class="author-name">Author: <a data-file="053-wheat-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-beer-2"></div>
+            <div class="class-name">.flaticon-beer-2</div>
+            <div class="author-name">Author: <a data-file="054-beer-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-sand"></div>
+            <div class="class-name">.flaticon-sand</div>
+            <div class="author-name">Author: <a data-file="055-sand" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-macaron"></div>
+            <div class="class-name">.flaticon-macaron</div>
+            <div class="author-name">Author: <a data-file="056-macaron" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-beer-3"></div>
+            <div class="class-name">.flaticon-beer-3</div>
+            <div class="author-name">Author: <a data-file="057-beer-3" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-barrel-2"></div>
+            <div class="class-name">.flaticon-barrel-2</div>
+            <div class="author-name">Author: <a data-file="058-barrel-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-soup"></div>
+            <div class="class-name">.flaticon-soup</div>
+            <div class="author-name">Author: <a data-file="059-soup" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-hot-sauce"></div>
+            <div class="class-name">.flaticon-hot-sauce</div>
+            <div class="author-name">Author: <a data-file="060-hot-sauce" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-skull"></div>
+            <div class="class-name">.flaticon-skull</div>
+            <div class="author-name">Author: <a data-file="061-skull" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pizza"></div>
+            <div class="class-name">.flaticon-pizza</div>
+            <div class="author-name">Author: <a data-file="062-pizza" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-cigar"></div>
+            <div class="class-name">.flaticon-cigar</div>
+            <div class="author-name">Author: <a data-file="063-cigar" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-cocktail-2"></div>
+            <div class="class-name">.flaticon-cocktail-2</div>
+            <div class="author-name">Author: <a data-file="064-cocktail-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-cake"></div>
+            <div class="class-name">.flaticon-cake</div>
+            <div class="author-name">Author: <a data-file="065-cake" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pina-colada"></div>
+            <div class="class-name">.flaticon-pina-colada</div>
+            <div class="author-name">Author: <a data-file="066-pina-colada" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-beer-4"></div>
+            <div class="class-name">.flaticon-beer-4</div>
+            <div class="author-name">Author: <a data-file="067-beer-4" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-mead"></div>
+            <div class="class-name">.flaticon-mead</div>
+            <div class="author-name">Author: <a data-file="068-mead" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-chicken-leg"></div>
+            <div class="class-name">.flaticon-chicken-leg</div>
+            <div class="author-name">Author: <a data-file="069-chicken-leg" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-pizza-1"></div>
+            <div class="class-name">.flaticon-pizza-1</div>
+            <div class="author-name">Author: <a data-file="070-pizza-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-burger-2"></div>
+            <div class="class-name">.flaticon-burger-2</div>
+            <div class="author-name">Author: <a data-file="071-burger-2" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-hot-dog"></div>
+            <div class="class-name">.flaticon-hot-dog</div>
+            <div class="author-name">Author: <a data-file="072-hot-dog" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-ice-cream"></div>
+            <div class="class-name">.flaticon-ice-cream</div>
+            <div class="author-name">Author: <a data-file="073-ice-cream" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-broccoli"></div>
+            <div class="class-name">.flaticon-broccoli</div>
+            <div class="author-name">Author: <a data-file="074-broccoli" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-lemonade"></div>
+            <div class="class-name">.flaticon-lemonade</div>
+            <div class="author-name">Author: <a data-file="075-lemonade" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-sandwich-3"></div>
+            <div class="class-name">.flaticon-sandwich-3</div>
+            <div class="author-name">Author: <a data-file="076-sandwich-3" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-beer-5"></div>
+            <div class="class-name">.flaticon-beer-5</div>
+            <div class="author-name">Author: <a data-file="077-beer-5" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-roast-chicken"></div>
+            <div class="class-name">.flaticon-roast-chicken</div>
+            <div class="author-name">Author: <a data-file="078-roast-chicken" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-dish"></div>
+            <div class="class-name">.flaticon-dish</div>
+            <div class="author-name">Author: <a data-file="079-dish" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-salad-1"></div>
+            <div class="class-name">.flaticon-salad-1</div>
+            <div class="author-name">Author: <a data-file="080-salad-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-spaguetti"></div>
+            <div class="class-name">.flaticon-spaguetti</div>
+            <div class="author-name">Author: <a data-file="081-spaguetti" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-taco-1"></div>
+            <div class="class-name">.flaticon-taco-1</div>
+            <div class="author-name">Author: <a data-file="082-taco-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-chicken-leg-1"></div>
+            <div class="class-name">.flaticon-chicken-leg-1</div>
+            <div class="author-name">Author: <a data-file="083-chicken-leg-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-soup-1"></div>
+            <div class="class-name">.flaticon-soup-1</div>
+            <div class="author-name">Author: <a data-file="084-soup-1" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-champagne"></div>
+            <div class="class-name">.flaticon-champagne</div>
+            <div class="author-name">Author: <a data-file="085-champagne" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+        <div class="glyph">
+            <div class="glyph-icon flaticon-ketchup"></div>
+            <div class="class-name">.flaticon-ketchup</div>
+            <div class="author-name">Author: <a data-file="086-ketchup" href="http://www.freepik.com">Freepik</a> </div>
+        </div>
+
+
+    </section>
+
+</body>
+</html>
