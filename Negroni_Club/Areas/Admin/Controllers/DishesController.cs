@@ -81,7 +81,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult EditDishCategory(DishesСategory model)
+        public IActionResult EditDishCategory(DishesСategory model, string titleIconName)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,10 @@ namespace Negroni_Club.Areas.Admin.Controllers
                 {
                     var category = dataManager.DishesCategories.GetDishesCategories().OrderBy(x => x.IndexNumber).Last();
                     model.IndexNumber = category.IndexNumber + 1;
+                    model.TitleIconPath = titleIconName;
                 }
+                if (titleIconName != null)
+                    model.TitleIconPath = titleIconName;
                 dataManager.DishesCategories.SaveDishesCategory(model);
             }
             return RedirectToAction(nameof(DishesController.Index), nameof(DishesController).CutController());
@@ -174,22 +177,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             dataManager.DishesCategories.SaveDishesCategory(nextСategory);
 
             return RedirectToAction(nameof(DishesController.Index), nameof(DishesController).CutController());
-        }
-
-        public IActionResult SelectCategoryIcon(Guid id)
-        {
-            var entity = id == default ? new DishesСategory() : dataManager.DishesCategories.GetDishesCategoryById(id);
-            return View(entity);
-        }
-
-        [HttpPost]
-        public IActionResult SelectCategoryIcon(Guid id, string titleIconPath)
-        {
-            var category = dataManager.DishesCategories.GetDishesCategoryById(id);
-            category.TitleIconPath = titleIconPath;
-            dataManager.DishesCategories.SaveDishesCategory(category);
-
-            return RedirectToAction(nameof(DishesController.EditDishCategory), nameof(DishesController).CutController());
         }
 
         #endregion

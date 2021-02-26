@@ -3,27 +3,547 @@
     string strTitle = "Редактировать запись";
     ViewBag.Title = strTitle;
 }
-
-<div class="AdminMenu">
+<head>
+    <title>
+        Выберите иконку для категории.
+    </title>
+    <link rel="stylesheet" type="text/css" href="flaticon.css">
+    <link rel="stylesheet" href="~/css/SelectIconStyles.css" />
+    <meta charset="UTF-8">
+</head>
+<div class="IconMenu">
     <h2>@strTitle</h2>
-    <div>
+    <div class="characters-off">
         <form asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="DateAdded" />
-            <input type="hidden" asp-for="TitleIconPath" />
-            <input type="hidden" asp-for="IndexNumber" />
             <input type="hidden" asp-for="Dishes" />
+            <input type="hidden" asp-for="IndexNumber" />
+            <input type="hidden" asp-for="TitleIconPath" />
 
-            <div asp-validation-summary="All"></div>
+        <div asp-validation-summary="All">
             <div class="div-box">
                 <label asp-for="Title"></label>
                 <input asp-for="Title" />
                 <span asp-validation-for="Title"></span>
             </div>
-            <div class="div-box">
-                <a asp-area="Admin" asp-controller="Dishes" asp-action="SelectCategoryIcon" asp-route-id="@Model.Id" method="post">Выбрать иконку</a>
+            <div class="glyph">
+                <div class="glyph-icon @Model.TitleIconPath"></div>
+                <div class="author-name">
+                    <label asp-for="TitleIconPath">Текущая Иконка</label>
+                </div>
             </div>
+            
+            <section id="glyphs">
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-rum"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-rum" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-beer"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-beer" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-drink"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-drink" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pagoda"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pagoda" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-barrel"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-barrel" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-tequila"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-tequila" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-perfume"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-perfume" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-steak"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-steak" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-fork"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-fork" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-vase"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-vase" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-salad"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-salad" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-big-ben"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-big-ben" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-sandwich"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-sandwich" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-barrel-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-barrel-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-agave"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-agave" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-burger"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-burger" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-tequila-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-tequila-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-rum-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-rum-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-noodles"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-noodles" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-sandwich-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-sandwich-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-tray"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-tray" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-drink-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-drink-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-wheat"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-wheat" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-bartender"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-bartender" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-bottle"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-bottle" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-wine"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-wine" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-wine-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-wine-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-cocktail"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-cocktail" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-shaker"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-shaker" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-brandy"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-brandy" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-water"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-water" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-cocktail-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-cocktail-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-turkey"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-turkey" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-sandwich-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-sandwich-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-tequila-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-tequila-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-room-service"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-room-service" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-chop"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-chop" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-wine-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-wine-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-whiskey"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-whiskey" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-coconut"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-coconut" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pitcher"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pitcher" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pie"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pie" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-soda"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-soda" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pint-of-beer"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pint-of-beer" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-burger-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-burger-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-hot-drink"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-hot-drink" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-rice"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-rice" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-tequila-3"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-tequila-3" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-taco"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-taco" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-beer-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-beer-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-wheat-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-wheat-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-beer-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-beer-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-sand"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-sand" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-macaron"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-macaron" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-beer-3"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-beer-3" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-barrel-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-barrel-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-soup"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-soup" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-hot-sauce"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-hot-sauce" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-skull"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-skull" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pizza"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pizza" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-cigar"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-cigar" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-cocktail-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-cocktail-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-cake"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-cake" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pina-colada"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pina-colada" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-beer-4"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-beer-4" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-mead"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-mead" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-chicken-leg"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-chicken-leg" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-pizza-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-pizza-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-burger-2"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-burger-2" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-hot-dog"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-hot-dog" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-ice-cream"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-ice-cream" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-broccoli"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-broccoli" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-lemonade"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-lemonade" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-sandwich-3"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-sandwich-3" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-beer-5"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-beer-5" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-roast-chicken"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-roast-chicken" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-dish"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-dish" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-salad-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-salad-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-spaguetti"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-spaguetti" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-taco-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-taco-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-chicken-leg-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-chicken-leg-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-soup-1"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-soup-1" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-champagne"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-champagne" />
+                    </div>
+                </div>
+                <div class="glyph">
+                    <div class="glyph-icon flaticon-ketchup"></div>
+                    <div class="author-name">
+                        <input type="radio" name="TitleIconName" value="flaticon-ketchup" />
+                    </div>
+                </div>
+            </section>
+        </div>
             <input type="submit" value="Сохранить" />
         </form>
     </div>
 </div>
+
+<!DOCTYPE html>
