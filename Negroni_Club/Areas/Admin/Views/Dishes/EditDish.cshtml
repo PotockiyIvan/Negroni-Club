@@ -14,6 +14,11 @@
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="DateAdded" />
             <input type="hidden" asp-for="TitleImagePath" />
+            <input type="hidden" asp-for="DishesСategoryId" />
+
+
+            <h4>Блюдо из категории @Model.DishesСategory.Title</h4>
+
 
             <div asp-validation-summary="All"></div>
             <div class="div-box">

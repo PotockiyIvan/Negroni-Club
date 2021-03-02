@@ -43,7 +43,6 @@ namespace Negroni_Club.Domain.Entities
         /// <summary>
         /// Категория блюд имеющяя данное блюдо.
         /// </summary>
-        [Required]
         public DishesСategory DishesСategory { get; set; }
     }
 }

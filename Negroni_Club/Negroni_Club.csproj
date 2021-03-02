@@ -279,7 +279,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\dishCategory icons\" />
+    <Folder Include="wwwroot\images\dish Images\" />
   </ItemGroup>
 
 </Project>

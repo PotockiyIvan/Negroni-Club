@@ -416,7 +416,7 @@ html, body {
 -------------------------------------------------------------------*/
 
 .banner {
-    background: url(../images/bacground.jpg) no-repeat center top;
+    background-color: rgba(0, 127, 161, 0.36);
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;

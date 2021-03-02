@@ -34,9 +34,28 @@ namespace Negroni_Club.Areas.Admin.Controllers
         }
 
         #region Edit Dishes
+
+        public IActionResult DishList(Guid id)
+        {
+            var model =  dataManager.DishesCategories.GetDishesCategoryById(id); 
+            return View(model);
+        }
+
+        /*В этот метод будет приходить id либо блюда лиюбо категории блюд,в зависимости
+          от того, что нужно сделать - создать или редактировать.*/
         public IActionResult EditDish(Guid id)
         {
-            var entity = id == default ? new Dish() : dataManager.Dishes.GetDishById(id);
+            Dish entity = new Dish { Id = new Guid() };
+            var category = dataManager.DishesCategories.GetDishesCategoryById(id);
+
+            if (category != null)
+            {
+                entity.DishesСategory = category;
+                entity.DishesСategoryId = category.Id;
+            }  
+            else
+               entity = dataManager.Dishes.GetDishById(id);
+
             return View(entity);
         }
         [HttpPost]

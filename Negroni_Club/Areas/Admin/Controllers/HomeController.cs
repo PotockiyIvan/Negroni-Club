@@ -29,6 +29,19 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(dataManager.Dishes.GetDishes());
         }
 
+        [HttpPost]
+        public IActionResult EditMenu(string title, string subTitle)
+        {
+            var model = dataManager.TextFields.GetTextFieldByCodeWord("Menu");
+
+            model.Title = title;
+            model.Subtitle = subTitle;
+
+            dataManager.TextFields.SaveTextField(model);
+            return RedirectToAction(nameof(DishesController.Index), nameof(DishesController).CutController());
+
+        }
+
         #region EditBanner
         public IActionResult EditBanner(string codeWord)
         {
@@ -69,7 +82,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
 
         [HttpPost]//Получаем от html формы модель ,проверяем ее и сохраняем
         public IActionResult EditAboutUs(TextField model, IFormFile bigTitleImage, IFormFile smallTitleImage)//Интерфейс представляет собой файл отправленный через http запрос
-        {   
+        {
             /*В этом методе мы получаем модель и два файла - картинки,далее если они не равны нулю,
              *сохраняем эти картинки в wwwroot попутно удаляя старые именяем 
              *путь в свойстве модели в бд и в связанной с ней таблицей.
@@ -89,7 +102,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
                         bigTitleImage.CopyTo(stream);//НЕПОНЯТНО!!!!!
                     }
                 }
-                  
+
                 if (smallTitleImage != null)
                 {
                     using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", smallTitleImage.FileName), FileMode.Create))
@@ -98,7 +111,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
                         model.TitleImages.FindAll(x => x.CodeWord == "AboutUsSmallTitleImage").ForEach(s => s.TitleImagePath = smallTitleImage.FileName);
                         smallTitleImage.CopyTo(stream);//НЕПОНЯТНО!!!!!
                     }
-                } 
+                }
                 dataManager.TextFields.SaveTextField(model);
 
                 return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
