@@ -278,8 +278,4 @@
     <None Include="wwwroot\js\ckeditor\vendor\promise.js" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\dish Images\" />
-  </ItemGroup>
-
 </Project>

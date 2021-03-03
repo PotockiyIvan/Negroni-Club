@@ -23,7 +23,7 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
         /// <param name="id">Первичный ключ.</param>
         public void DeleteDish(Guid id)
         {
-            context.Dishes.Remove(new Dish() { Id = id });
+            context.Dishes.Remove(GetDishById(id));
             context.SaveChanges();
         }
 

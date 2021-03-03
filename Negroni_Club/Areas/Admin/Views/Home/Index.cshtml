@@ -14,32 +14,6 @@
                     <div class="banner-cell">
 
                         <h1>@strTitle</h1>
-                        @*<div>
-                            <h3>Наши блюда</h3>
-                            <div class="div-box">
-                                <a asp-area="Admin" asp-controller="Dishes" asp-action="Edit" asp-route-id="">Добавить блюдо</a>
-                            </div>
-                            @if (Model.Any())
-                            {
-                                <div>
-                                    @foreach (Dish entity in Model)
-                                    {
-                                        <div>
-                                            <a asp-area="Admin" asp-controller="Dishes" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
-                                            |
-                                            <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Dishes" asp-action="Delete" method="post">
-                                                <input type="hidden" name="id" value="@entity.Id">
-                                                <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
-                                            </form>
-                                            |
-                                            <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
-                                                @($"{entity.Title}")
-                                            </a>
-                                        </div>
-                                    }
-                                </div>
-                            }
-                        </div>*@
                         <div class="div-box">
                             <h2>Редактировать блоки сайта</h2>
                             <a asp-area="Admin" asp-controller="Dishes" asp-action="Index">Редактировать Меню</a>

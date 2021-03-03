@@ -37,7 +37,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
 
         public IActionResult DishList(Guid id)
         {
-            var model =  dataManager.DishesCategories.GetDishesCategoryById(id); 
+            var model =  dataManager.DishesCategories.GetDishesCategoryById(id);
             return View(model);
         }
 
@@ -45,14 +45,11 @@ namespace Negroni_Club.Areas.Admin.Controllers
           от того, что нужно сделать - создать или редактировать.*/
         public IActionResult EditDish(Guid id)
         {
-            Dish entity = new Dish { Id = new Guid() };
+            Dish entity = new Dish();
             var category = dataManager.DishesCategories.GetDishesCategoryById(id);
 
             if (category != null)
-            {
-                entity.DishesСategory = category;
                 entity.DishesСategoryId = category.Id;
-            }  
             else
                entity = dataManager.Dishes.GetDishById(id);
 
@@ -66,13 +63,13 @@ namespace Negroni_Club.Areas.Admin.Controllers
                 if (titleImageFile != null)
                 {
                     model.TitleImagePath = titleImageFile.FileName;
-                    using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", titleImageFile.FileName), FileMode.Create))
+                    using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/dish images", titleImageFile.FileName), FileMode.Create))
                     {
                         titleImageFile.CopyTo(stream);
                     }
                 }
                 dataManager.Dishes.SaveDish(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+                return View("DishList", dataManager.DishesCategories.GetDishesCategoryById(model.DishesСategoryId));
             }
             return View(model);
         }
@@ -80,8 +77,12 @@ namespace Negroni_Club.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(Guid id)
         {
+            var category = dataManager.DishesCategories.GetDishesCategoryById(dataManager.Dishes.GetDishById(id).DishesСategoryId);
+
+            System.IO.File.Delete(Path.Combine(hostingEnvironment.WebRootPath, "images/dish Images/", dataManager.Dishes.GetDishById(id).TitleImagePath));
             dataManager.Dishes.DeleteDish(id);
-            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+
+            return View("DishList",category);
         }
 
         #endregion

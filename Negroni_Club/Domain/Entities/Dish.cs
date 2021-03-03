@@ -12,7 +12,7 @@ namespace Negroni_Club.Domain.Entities
         /// <summary>
         /// Название блюда.
         /// </summary>
-        [Required(ErrorMessage = "Заполните название блюда")]
+        [Required(ErrorMessage = "Введите название блюда")]
         [Display(Name = "Название блюда")]
         public override string Title { get; set; }
 

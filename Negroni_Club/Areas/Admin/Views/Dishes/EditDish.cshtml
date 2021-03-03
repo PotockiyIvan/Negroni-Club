@@ -11,13 +11,12 @@
     <h2>@strTitle</h2>
     <div>
         <form asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" method="post" enctype="multipart/form-data">
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <input type="hidden" name="DishesСategoryId" value="@Model.DishesСategoryId" />
             <input type="hidden" asp-for="DateAdded" />
             <input type="hidden" asp-for="TitleImagePath" />
-            <input type="hidden" asp-for="DishesСategoryId" />
 
 
-            <h4>Блюдо из категории @Model.DishesСategory.Title</h4>
 
 
             <div asp-validation-summary="All"></div>

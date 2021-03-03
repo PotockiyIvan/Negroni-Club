@@ -33,7 +33,7 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
         /// <returns></returns>
         public IQueryable<DishesСategory> GetDishesCategories()
         {
-            return context.DishesCategories;
+            return context.DishesCategories.Include(x => x.Dishes);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
         /// <returns></returns>
         public DishesСategory GetDishesCategoryById(Guid id)
         {
-            return context.DishesCategories.FirstOrDefault(x => x.Id == id);
+            return context.DishesCategories.Include(x => x.Dishes).FirstOrDefault(x => x.Id == id);
         }
 
         /// <summary>
