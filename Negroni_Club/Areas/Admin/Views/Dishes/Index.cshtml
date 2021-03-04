@@ -4,17 +4,16 @@
 }
 
 @{
-    
+
     var entity = dataManager.TextFields.GetTextFieldByCodeWord("Menu");
-   
-    <div id="banner" class="banner full-screen-mode parallax">
+
+    <div id="Banner-Dishes-Category-List" class="banner full-screen-mode parallax">
         <div class="container pr">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="banner-static">
                     <div class="banner-text">
-
                         <div class="banner-cell">
-                            @*<div class="AdminMenu menu">*@
+                            <div>
                                 <h2>Изменить описание меню</h2>
                                 <div>
                                     <form asp-area="Admin" asp-controller="Home" asp-action="EditMenu" method="post" enctype="multipart/form-data">
@@ -32,7 +31,71 @@
                                         <input type="submit" value="Сохранить" />
                                     </form>
                                 </div>
-                            @*</div>*@
+                                <div class="container">
+                                    <div class="table-responsive">
+                                        <div class="table-wrapper">
+                                            <div class="table-title">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h2>Редактировать Категории</h2>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <a class="btn btn-success" asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id=""><i class="material-icons">&#xE147;</i><span>Добавить Новую Категорию</span></a>
+                                                        @*<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Добавить Новую Категорию</span></a>*@
+                                                        @*<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <table id="TableTitles" class="table table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Категория</th>
+                                                        <th>Поднять</th>
+                                                        <th>Опустить</th>
+                                                        <th>Показать блюда</th>
+                                                        <th>Редактировать</th>
+                                                        <th>Удалить</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @{ var categories = dataManager.DishesCategories.GetDishesCategories().OrderBy(x => x.IndexNumber);
+
+                                                        @foreach (DishesСategory сategory in categories)
+                                                        {
+                                                            <tr>
+                                                                <td>@сategory.Title</td>
+                                                                <td>
+                                                                    <form style="display: inline-block;" id="@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="Up" method="post">
+                                                                        <input type="hidden" name="id" value="@сategory.Id">
+                                                                        <input type="submit" value="Поднять" />
+                                                                    </form>
+                                                                </td>
+                                                                <td>
+                                                                    <form style="display: inline-block;" id="form-@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="Down" method="post">
+                                                                        <input type="hidden" name="id" value="@сategory.Id">
+                                                                        <input type="submit" value="Опустить" />
+                                                                    </form>
+                                                                </td>
+                                                                <td>
+                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="DishList" asp-route-id="@сategory.Id">
+                                                                        Посмотреть блюда
+                                                                    </a>
+                                                                </td>
+                                                                <td>
+                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id="@сategory.Id" method="post"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" asp-route-id="@сategory.Id" method="post"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- end banner-cell -->
                     </div>
@@ -46,6 +109,5 @@
     </div>
 }
 
-@await Html.PartialAsync("CategoriesListPartial", dataManager.DishesCategories.GetDishesCategories())
 
 
