@@ -12,12 +12,15 @@
                 <div class="banner-text">
                     <div class="banner-cell">
                         <div class="container-lg">
+                            <h1>@strTitle</h1>
                             <div class="table-wrapper2">
                                 <div class="table-title2">
                                     <div class="row">
-                                        <div class="col-sm-8"><h2>Редактировать Блюда></h2></div>
+                                        <div class="col-sm-8"><h2>Редактировать Блюда</h2></div>
                                         <div class="col-sm-4">
-                                            <button  id="EditDishBtn"  type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                                            <form asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" asp-route-id="@Model.Id" method="get">
+                                                <button id="EditDishBtn" type="submit" class="btn btn-info add-new"><i class="fa fa-plus"></i> Добавить блюдо</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -30,64 +33,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Бургер Говна</td>
-                                            <td><a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
-                                            <td><a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
-                                        </tr>
-                                        @*<tr>
-                                            <td>Peter Parker</td>
-                                            <td>Customer Service</td>
-                                            <td>(313) 555-5735</td>
-                                            <td>
-                                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fran Wilson</td>
-                                            <td>Human Resources</td>
-                                            <td>(503) 555-9931</td>
-                                            <td>
-                                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                            </td>
-                                        </tr>*@
+                                        @if (Model.Dishes != null)
+                                        {
+                                            foreach (Dish entity in Model.Dishes)
+                                            {
+                                                <tr>
+                                                    <td>@entity.Title</td>
+                                                    <td>
+                                                        <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" asp-route-id="@entity.Id" method="post" class="edit" title="Edit" data-toggle="tooltip">
+                                                            <i class="material-icons">&#xE254;</i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <form asp-area="Admin" asp-controller="Dishes" asp-action="Delete" id="form-@entity.Id" method="post">
+                                                            <input type="hidden" name="id" value="@entity.Id">
+                                                            <a class="delete" title="Delete" data-toggle="tooltip" href="#" onclick="document.getElementById('form-@entity.Id').submit();">
+                                                                <i class="material-icons">&#xE872;</i>
+                                                            </a>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-
-
-
-
-                        <h1>@strTitle</h1>
-                        <div>
-                            <div class="div-box">
-                                <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" asp-route-id="@Model.Id">Добавить блюдо</a>
-                            </div>
-                            <div>
-                                @if (Model.Dishes != null)
-                                {
-                                    foreach (Dish entity in Model.Dishes)
-                                    {
-                                        <div>
-                                            <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" asp-route-id="@entity.Id">редактировать</a>
-                                            |
-                                            <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Dishes" asp-action="Delete" method="post">
-                                                <input type="hidden" name="id" value="@entity.Id">
-                                                <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
-                                            </form>
-                                            |
-                                            <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
-                                                @($"{entity.Title}")
-                                            </a>
-                                        </div>
-                                    }
-                                }
-                                <a asp-area="Admin" asp-controller="Dishes" asp-action="Index">Назад</a>
                             </div>
                         </div>
                     </div>

@@ -41,8 +41,6 @@
                                                     </div>
                                                     <div class="col-xs-6">
                                                         <a class="btn btn-success" asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id=""><i class="material-icons">&#xE147;</i><span>Добавить Новую Категорию</span></a>
-                                                        @*<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Добавить Новую Категорию</span></a>*@
-                                                        @*<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>*@
                                                     </div>
                                                 </div>
                                             </div>
@@ -82,10 +80,19 @@
                                                                     </a>
                                                                 </td>
                                                                 <td>
-                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id="@сategory.Id" method="post"><i id="EditBtn" class="material-icons" data-toggle="tooltip" title="Edit" >&#xE254;</i></a>
+                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id="@сategory.Id" method="post"><i id="EditBtn" class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                                                 </td>
                                                                 <td>
-                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" asp-route-id="@сategory.Id" method="post"><i id="DelBtn" class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                                    <form style="display: inline-block;" id="form-@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" method="post">
+                                                                        <input type="hidden" name="id" value="@сategory.Id">
+                                                                        <a href="#" onclick="document.getElementById('form-@сategory.Id').submit();">
+                                                                            <i id="DelBtn" class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                                                                        </a>
+                                                                    </form>
+                                                                    @*<form style="display: inline-block;" id="form-@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" method="post">
+                                                                            <input type="hidden" name="id" value="@сategory.Id">
+                                                                            <input type="submit" value="Удалить" />
+                                                                        </form>*@
                                                                 </td>
                                                             </tr>
                                                         }

@@ -43,6 +43,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
 
         /*В этот метод будет приходить id либо блюда лиюбо категории блюд,в зависимости
           от того, что нужно сделать - создать или редактировать.*/
+        
         public IActionResult EditDish(Guid id)
         {
             Dish entity = new Dish();
