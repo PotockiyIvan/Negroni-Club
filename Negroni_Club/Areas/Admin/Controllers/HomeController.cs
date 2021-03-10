@@ -12,7 +12,7 @@ using Negroni_Club.Domain.Repositories.Abstract;
 
 namespace Negroni_Club.Areas.Admin.Controllers
 {
-    [Area("Admin")]//Атрибут позволяющий пользоваться этой областью только админу(метод - AdminAutarization.Apply)
+    [Area("Admin")]
     public class HomeController : Controller
     {
         private readonly DataManager dataManager;
@@ -29,6 +29,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(dataManager.Dishes.GetDishes());
         }
 
+        #region EditMenu
         [HttpPost]
         public IActionResult EditMenu(string title, string subTitle)
         {
@@ -41,6 +42,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return RedirectToAction(nameof(DishesController.Index), nameof(DishesController).CutController());
 
         }
+        #endregion
 
         #region EditBanner
         public IActionResult EditBanner(string codeWord)

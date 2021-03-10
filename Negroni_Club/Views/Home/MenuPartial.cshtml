@@ -11,7 +11,7 @@
                     <h2 class="block-title text-center">
                         @dataManager.TextFields.GetTextFieldByCodeWord("Menu").Title
                     </h2>
-                    <p class="title-caption text-center">@dataManager.TextFields.GetTextFieldByCodeWord("Menu").Subtitle</p>
+                    <p class="title-caption text-center">@dataManager.TextFields.GetTextFieldByCodeWord("Menu").Text</p>
                 </div>
                 <div class="tab-menu">
                     <div class="slider slider-nav">
@@ -45,7 +45,7 @@
                                                     <h2>@dish.Title</h2>
                                                     <p>
                                                         @dish.Subtitle<br>
-                                                        <a href="images/dish Images/@dish.TitleImagePath?width=1234&height=800" title="1" data-gallery>Чекни</a>
+                                                        <a href="images/dish Images/@dish.TitleImagePath?width=1234&height=800" title="1" data-gallery>Приблизить</a>
                                                     </p>
                                                 </figcaption>
                                             </figure>
@@ -64,4 +64,14 @@
     <!--end row-->
 </div>
 <!--end container-->
- 
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">Title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+</div>

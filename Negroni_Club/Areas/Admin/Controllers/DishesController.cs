@@ -13,6 +13,7 @@ using Negroni_Club.Domain.Entities;
 using Negroni_Club.Domain.Repositories.Abstract;
 using Negroni_Club.Domain.Repositories;
 using Negroni_Club.Service;
+using System.Text.RegularExpressions;
 
 namespace Negroni_Club.Areas.Admin.Controllers
 {
@@ -69,6 +70,9 @@ namespace Negroni_Club.Areas.Admin.Controllers
                         titleImageFile.CopyTo(stream);
                     }
                 }
+                var subtitle = Regex.Replace(model.Subtitle, @"\,(?! |$)", ", ");//Добавляем пробелы после запятых если их нет,чтобы не ехала верстка
+                model.Subtitle = subtitle;
+
                 dataManager.Dishes.SaveDish(model);
                 return View("DishList", dataManager.DishesCategories.GetDishesCategoryById(model.DishesСategoryId));
             }

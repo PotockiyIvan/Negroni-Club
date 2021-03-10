@@ -13,95 +13,89 @@
                 <div class="banner-static">
                     <div class="banner-text">
                         <div class="banner-cell">
+                            <h2>Изменить описание меню</h2>
                             <div>
-                                <h2>Изменить описание меню</h2>
-                                <div>
-                                    <form asp-area="Admin" asp-controller="Home" asp-action="EditMenu" method="post" enctype="multipart/form-data">
-                                        <div class="div-box">
-                                            <label asp-for="@entity.Title"></label>
-                                            <input type="text" name="Title" value="@entity.Title" />
-                                            <span asp-validation-for="@entity.Title"></span>
-                                        </div>
-
-                                        <div class="div-box">
-                                            <label asp-for="@entity.Subtitle"></label>
-                                            <input type="text" name="Subtitle" value="@entity.Subtitle" />
-                                            <span asp-validation-for="@entity.Subtitle"></span>
-                                        </div>
-                                        <input type="submit" value="Сохранить" />
-                                    </form>
-                                </div>
-                                <div class="container">
-                                    <div class="table-responsive">
-                                        <div class="table-wrapper">
-                                            <div class="table-title">
-                                                <div class="row">
-                                                    <div class="col-xs-6">
-                                                        <h2>Редактировать Категории</h2>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <a class="btn btn-success" asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id=""><i class="material-icons">&#xE147;</i><span>Добавить Новую Категорию</span></a>
-                                                    </div>
+                                <form asp-area="Admin" asp-controller="Home" asp-action="EditMenu" method="post" enctype="multipart/form-data">
+                                    <div class="div-box">
+                                        <label asp-for="@entity.Title"></label>
+                                        <input type="text" name="Title" value="@entity.Title" />
+                                        <span asp-validation-for="@entity.Title"></span>
+                                    </div>
+                                    <div class="div-box Large-Input">
+                                        <label asp-for="@entity.Subtitle"></label>
+                                        <input type="text" name="Subtitle" value="@entity.Subtitle" />
+                                        <span asp-validation-for="@entity.Subtitle"></span>
+                                    </div>
+                                    <input type="submit" value="Сохранить" />
+                                </form>
+                            </div>
+                            <div class="container">
+                                <div class="table-responsive">
+                                    <div class="table-wrapper">
+                                        <div class="table-title">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <h2>Редактировать Категории</h2>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <a class="btn btn-success" asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id=""><i class="material-icons">&#xE147;</i><span>Добавить Новую Категорию</span></a>
                                                 </div>
                                             </div>
-                                            <table id="TableTitles" class="table table-striped table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Категория</th>
-                                                        <th>Поднять</th>
-                                                        <th>Опустить</th>
-                                                        <th>Показать блюда</th>
-                                                        <th>Редактировать</th>
-                                                        <th>Удалить</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @{ var categories = dataManager.DishesCategories.GetDishesCategories().OrderBy(x => x.IndexNumber);
-
-                                                        @foreach (DishesСategory сategory in categories)
-                                                        {
-                                                            <tr>
-                                                                <td>@сategory.Title</td>
-                                                                <td>
-                                                                    <form style="display: inline-block;" id="@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="Up" method="post">
-                                                                        <input type="hidden" name="id" value="@сategory.Id">
-                                                                        <input type="submit" value="Поднять" />
-                                                                    </form>
-                                                                </td>
-                                                                <td>
-                                                                    <form style="display: inline-block;" id="form-@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="Down" method="post">
-                                                                        <input type="hidden" name="id" value="@сategory.Id">
-                                                                        <input type="submit" value="Опустить" />
-                                                                    </form>
-                                                                </td>
-                                                                <td>
-                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="DishList" asp-route-id="@сategory.Id">
-                                                                        Посмотреть блюда
-                                                                    </a>
-                                                                </td>
-                                                                <td>
-                                                                    <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id="@сategory.Id" method="post"><i id="EditBtn" class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                                                </td>
-                                                                <td>
-                                                                    <form style="display: inline-block;" id="form-@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" method="post">
-                                                                        <input type="hidden" name="id" value="@сategory.Id">
-                                                                        <a href="#" onclick="document.getElementById('form-@сategory.Id').submit();">
-                                                                            <i id="DelBtn" class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                                                                        </a>
-                                                                    </form>
-                                                                    @*<form style="display: inline-block;" id="form-@сategory.Id" asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" method="post">
-                                                                            <input type="hidden" name="id" value="@сategory.Id">
-                                                                            <input type="submit" value="Удалить" />
-                                                                        </form>*@
-                                                                </td>
-                                                            </tr>
-                                                        }
-                                                    }
-                                                </tbody>
-                                            </table>
                                         </div>
+                                        <table id="TableTitles" class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Категория</th>
+                                                    <th>Поднять</th>
+                                                    <th>Опустить</th>
+                                                    <th>Показать блюда</th>
+                                                    <th>Редактировать</th>
+                                                    <th>Удалить</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{ var categories = dataManager.DishesCategories.GetDishesCategories().OrderBy(x => x.IndexNumber);
+
+                                                    @foreach (DishesСategory сategory in categories)
+                                                    {
+                                                        <tr class="CRUDBtn">
+                                                            <td>@сategory.Title</td>
+                                                            <td>
+                                                                <form asp-area="Admin" asp-controller="Dishes" asp-action="Up" method="post">
+                                                                    <input type="hidden" name="id" value="@сategory.Id">
+                                                                    <button type="submit" class="fa fa-chevron-up" aria-hidden="true" title="Поднять"></button>
+                                                                </form>
+                                                            </td>
+                                                            <td>
+                                                                <form asp-area="Admin" asp-controller="Dishes" asp-action="Down" method="post">
+                                                                    <input type="hidden" name="id" value="@сategory.Id">
+                                                                    <button type="submit">
+                                                                        <i class="fa fa-chevron-down" aria-hidden="true" title="Опустить"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </td>
+                                                            <td>
+                                                                <a asp-area="Admin" asp-controller="Dishes" asp-action="DishList" asp-route-id="@сategory.Id">
+                                                                    <i class="fa fa-folder-open" aria-hidden="true" title="Посмотреть блюда"></i>
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <a asp-area="Admin" asp-controller="Dishes" asp-action="EditDishCategory" asp-route-id="@сategory.Id" method="post"><i id="EditBtn" class="material-icons" data-toggle="tooltip" title="Редактировать">&#xE254;</i></a>
+                                                            </td>
+                                                            <td>
+                                                                <form asp-area="Admin" asp-controller="Dishes" asp-action="DeleteDishCategory" method="post">
+                                                                    <input type="hidden" name="id" value="@сategory.Id">
+                                                                    <button type="submit" class="btn-light"><i id="DelBtn" class="material-icons" data-toggle="tooltip" title="Удалить">&#xE872;</i></button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
+                                <a asp-area="Admin" asp-controller="Home" asp-action="Index">На главную</a>
                             </div>
                         </div>
                         <!-- end banner-cell -->

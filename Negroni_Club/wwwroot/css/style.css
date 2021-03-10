@@ -2081,6 +2081,9 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     .div-box a {
         display: block;
     }
+    .div-box textarea{
+        color:black;
+    }
 
 .img-block {
     display: block;
@@ -2099,6 +2102,11 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 
 .AdminMenu {
     margin: 200px 600px 120px 100px;
+}
+
+.Large-Input input {
+    width: 97%;
+    height: 35px;
 }
 
 .IconMenu {

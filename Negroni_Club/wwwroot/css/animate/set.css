@@ -23,14 +23,14 @@
 	opacity: 1;
 }
 
-.grid figure figcaption {
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
+	.grid figure figcaption {
+		padding: 15px 35px 35px 5px;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 1.25em;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
 
 .grid figure figcaption::before,
 .grid figure figcaption::after {
