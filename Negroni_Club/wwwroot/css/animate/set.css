@@ -11,7 +11,7 @@
 	float: left;
 	overflow: hidden;
 	margin: 0;	/*change here for spacing*/	
-	width: 33.333333333%;
+	width:33.333333333%;
 	text-align: center;
 	cursor: pointer;
 }
@@ -68,7 +68,7 @@
 
 .grid figure p {
 	letter-spacing: 1px;
-	font-size: 68.5%;
+	font-size: 60%;
 }
 
 /* Individual effects */
@@ -807,9 +807,10 @@ figure.effect-milo h2 {
 }
 
 figure.effect-milo p {
-	padding: 0 10px 0 0;
-	width: 50%;
+	padding: 0 3% 0 0;
+	width: 67%;
 	border-right: 1px solid #fff;
+	box-sizing:border-box;
 	text-align: right;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
