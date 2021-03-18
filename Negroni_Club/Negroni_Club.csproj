@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\FromTeamplate\**" />
+    <Compile Remove="wwwroot\lib\**" />
+    <Content Remove="wwwroot\images\FromTeamplate\**" />
+    <Content Remove="wwwroot\lib\**" />
+    <EmbeddedResource Remove="wwwroot\images\FromTeamplate\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
+    <None Remove="wwwroot\images\FromTeamplate\**" />
+    <None Remove="wwwroot\lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="bundleconfig.json" />
     <Content Remove="Views\Home\Privacy.cshtml" />
   </ItemGroup>

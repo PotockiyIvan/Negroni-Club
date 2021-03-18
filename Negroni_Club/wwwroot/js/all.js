@@ -6929,7 +6929,6 @@ return ImagesLoaded;
         viewDate: false
     };
 }));
-				
 
 
 /* 

@@ -1,14 +1,14 @@
 .navbar-default .navbar-toggle .icon-bar {
-	background-color: rgb(204, 0, 0);
+	background-color: rgb(169,0,0);
 }
 .main-menu .navbar-default .navbar-nav .active a {
-	color: rgb(204, 0, 0);
+	color: rgb(169,0,0);
 }
 .main-menu nav li a::after {
-	background: rgb(204, 0, 0);
+	background: rgb(169,0,0);
 }
 .typer {
-	color: rgb(204, 0, 0) !important;
+	color: rgb(169,0,0)!important;
 }
 .banner-text h2 {
 	color: #202020;
@@ -22,45 +22,45 @@
 		border: 2px solid white;
 	}
 .hvr-underline-from-center::before {
-	background: rgb(204, 0, 0);
-
+	background: rgb(169,0,0);
 }
 .block-title {
-	color: rgb(204, 0, 0);
+	color: rgb(169,0,0);
 }
 .item-type-zoom .item-hover:hover::before {
 	background: rgba(203, 146, 146, 0.5);
 }
 .special-box .owl-theme .owl-controls .owl-page.active span {
-	background: rgb(204, 0, 0);
+	background: rgb(169,0,0);
 }
 .offer-item div h3 {
-	color: rgb(204, 0, 0);
+	color: rgb(169,0,0);
 }
 .tab-menu .is-active {
 	background: #202020;
 }
 .tab-menu .slick-arrow.slick-prev {
-	background: rgb(204, 0, 0) url(../../images/back.png) no-repeat center;
+	background: rgb(169,0,0)
+	url(../../images/back.png) no-repeat center;
 	background-position: 2px 4px;
 }
 .tab-menu .slick-arrow.slick-next {
-	background: rgb(204, 0, 0) url(../../images/next.png) no-repeat center;
+	background: rgb(169, 0, 0) url(../../images/next.png) no-repeat center;
 	background-position: 7px 4px;
 }
 
 .offer-item .offer-price {
-	border: 1px solid rgb(204, 0, 0);
+	border: 1px solid rgb(169, 0, 0);
 }
 .sf-team:hover .text-col {
-	background-color: rgb(204, 0, 0);
+	background-color: rgba(35, 35, 35, 0.82);
 }
 .gal-item a::after {
 	background-color: rgba(203, 146, 146, 0.5);
 }
 .overlay i:hover {
-	border: 1px solid rgb(204, 0, 0);
-	color: rgb(204, 0, 0);
+	border: 1px solid rgb(169, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .blog-btn-v a {
 	font-size:20px;
@@ -70,71 +70,71 @@
 	margin:10px 10px;
 }
 .book-srv a {
-	background: rgb(204, 0, 0);
-	border: 3px solid rgb(204, 0, 0);
+	background: rgb(169, 0, 0);
+	border: 3px solid rgb(169, 0, 0);
 }
 
 .panel-pricing .panel-heading {
-	background: rgb(204, 0, 0);
+	background: rgb(169, 0, 0);
 }
 .panel-pricing {
-	border: 1px solid rgb(204, 0, 0);
+	border: 1px solid rgb(169, 0, 0);
 }
 .panel-body p strong span {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .pricing-main .panel-footer a {
-	background: rgb(204, 0, 0);
-	border: 3px solid rgb(204, 0, 0);
+	background: rgb(169, 0, 0);
+	border: 3px solid rgb(169, 0, 0);
 }
 	.pricing-main .panel-footer a:hover {
-		border: 3px solid rgb(204, 0, 0);
+		border: 3px solid rgb(169, 0, 0);
 	}
 
 .reserve-book-btn button {
-	background: rgb(204, 0, 0);
-	border: 3px solid rgb(204, 0, 0);
+	background: rgb(169, 0, 0);
+	border: 3px solid rgb(169, 0, 0);
 }
 .reserve-book-btn button:hover a{
 	color:#000000;
 }
 .footer-news form a {
-	background: rgb(204, 0, 0);
+	background: rgb(169, 0, 0);
 }
 	.footer-news form a:hover {
-		border: 2px dotted rgb(204, 0, 0);
+		border: 2px dotted rgb(169, 0, 0);
 	}
 .footer-box-a h3 {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .footer-box-b h3 {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .footer-box-c h3 {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .footer-box-d h3 {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .footer-box-c p a:hover {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 .footer-box-b ul li a:hover {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 
 .footer-box .socials-box a:hover .social-circle-border {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 
 .footer-box-c p i {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }
 
 .copyright-main {
-	background: rgb(204, 0, 0);
+	background: rgb(169, 0, 0);
 }
 
 #color-panel a.panel-button:hover {
-	color: rgb(204, 0, 0);
+	color: rgb(169, 0, 0);
 }

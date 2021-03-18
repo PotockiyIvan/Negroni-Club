@@ -1,3 +1,4 @@
+
 /*------------------------------------------------------------------
     File Name: style.css
     Template Name: Landigoo
@@ -39,11 +40,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');*/
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 /*------------------------------------------------------------------
     IMPORT FILES
 -------------------------------------------------------------------*/
-
 @import url(owl.theme.css);
 @import url(owl.carousel.css);
 @import url(slick.css);
@@ -53,7 +54,6 @@
 @import url(bootstrap-select.min.css);
 @import url(normalize.css);
 @import url(animate.min.css);
-
 /*------------------------------------------------------------------
     SKELETON
 -------------------------------------------------------------------*/
@@ -66,7 +66,6 @@
     font-weight: normal;
     font-style: normal;
 }*/
-
 @font-face {
     font-family: 'Lobster-Regular';
     src: url('file:///C:\Users\zeleb\source\repos\Negroni_Club\Negroni_Club\wwwroot\fonts\Lobster-Regular.ttf') format('truetype');
@@ -1048,21 +1047,21 @@ to {
 .sf-team .text-col {
     float: left;
     width: 100%;
-    padding: 25px 20px;
-    border: 1px solid #ccc;
+    padding: 25px 20px; /*
+    border: 1px solid #ccc;*/
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     text-align: center;
-    background: #fff;
+    background: #e6e6e6;
 }
 
 .sf-team .thumb a img {
     width: 100%;
 }
 
-.sf-team:hover .text-col {
-    border: 1px solid rgba(0,0,0,0);
+.sf-team:hover .text-col {/*
+    border: 1px solid rgba(0,0,0,0);*/
     transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
@@ -1071,7 +1070,7 @@ to {
 }
 
 .sf-team:hover .thumb img {
-    opacity: 0.6;
+    opacity: 0.7;
     transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
@@ -1135,7 +1134,7 @@ to {
     display: block;
 }
 
-.sf-team:hover .text-col h3, .sf-team:hover .text-col p {
+.sf-team:hover .text-col h3, .sf-team:hover .text-col p, .sf-team:hover .text-col h2 {
     color: #fff;
     transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
@@ -1150,6 +1149,7 @@ to {
 -------------------------------------------------------------------*/
 
 .gallery-main {
+    background-color: #E6E6E6;
 }
 
     .gallery-main .title-caption {
@@ -1286,6 +1286,129 @@ to {
     transform: translate3d(0, -100px, 0);
     opacity: 1;
 }
+
+.portfolio-item img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio-item .thumb {
+    position: relative;
+}
+
+
+.portfolio-item .hover-effect .hover-content {
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+
+.grid-portfolio {
+    padding: 15px 30px 25px 30px;
+    background-color: #232323;
+}
+
+    .grid-portfolio .portfolio-item {
+        margin: 15px 0px;
+    }
+
+.portfolio-item .hover-effect .hover-content {
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    bottom: 5px;
+    left: 0;
+}
+
+
+.grid-portfolio .portfolio-item h1 {
+    position: relative;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #fff;
+    display: inline-block;
+    padding-left: 20px;
+    line-height: 15px;
+    transform: translateY(25px);
+    transition: .5s ease-in-out;
+    letter-spacing: 0.5px;
+}
+
+.grid-portfolio .portfolio-item em {
+    font-style: normal;
+    font-weight: 200;
+}
+
+.grid-portfolio .portfolio-item:hover h1 {
+    transform: translateY(0);
+}
+
+.grid-portfolio .portfolio-item p {
+    padding-left: 20px;
+    font-weight: 600 !important;
+    font-family: 'Rubik Mono One', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    color: rgb(169,0,0);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .5s ease-in-out;
+    text-transform: uppercase;
+    background-color: #2323239c;
+}
+
+.grid-portfolio .portfolio-item:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid-portfolio .load-more-button {
+    margin-top: 15px;
+}
+
+    .grid-portfolio .load-more-button a {
+        width: 100%;
+        height: 80px;
+        display: inline-block;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #fff;
+        background-color: #313131;
+        transition: all 0.5s;
+    }
+
+        .grid-portfolio .load-more-button a:hover {
+            color: rgba(250,250,250,0.5);
+        }
+
+
+
+
+
+@media (max-width: 530px) {
+
+    .grid-portfolio {
+        padding: 0px 0px;
+    }
+
+        .grid-portfolio .portfolio-item {
+            margin: 30px 0px;
+        }
+
+        .grid-portfolio .load-more-button {
+            padding-bottom: 30px;
+        }
+}
+
+
+
 
 
 /*------------------------------------------------------------------
@@ -2081,8 +2204,9 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     .div-box a {
         display: block;
     }
-    .div-box textarea{
-        color:black;
+
+    .div-box textarea {
+        color: black;
     }
 
 .img-block {
@@ -2121,7 +2245,3 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     height: 1%;
     padding-top: 200px;
 }
-
-
-
-
