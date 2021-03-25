@@ -80,6 +80,36 @@
     font-style: normal;
 }
 
+
+/*------------------------------------------------------------------
+   	ScrollBar
+-------------------------------------------------------------------*/
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #939393;
+    border-radius: 8px;
+    border: 3px solid #d4d4d4;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(59, 59, 59, 0.72);
+    }
+
+
+
+
+
+
 body {
     color: #686868;
     font-size: 16px;
@@ -901,14 +931,15 @@ to {
 .offer-item {
     position: relative;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
     .offer-item img {
         width: 20%;
         float: left;
-        padding: 10px;
-        background: #fff;
+        padding: 5px;
+        background: #202020;
         border-radius: 50%;
     }
 
@@ -979,7 +1010,8 @@ to {
 /*foods*/
 #foods h2 { /*
     padding-top: 6em;*/
-    color: white;
+    color: rgb(169,0,0);
+    font-family: 'Rubik Mono One', sans-serif;
 }
 
 #foods figcaption a {
@@ -1307,7 +1339,7 @@ to {
 
 
 .grid-portfolio {
-    padding: 15px 30px 25px 30px;
+    padding: 15px 30px 15px 30px;
     background-color: #232323;
 }
 
@@ -1387,6 +1419,21 @@ to {
         .grid-portfolio .load-more-button a:hover {
             color: rgba(250,250,250,0.5);
         }
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 785px;
+    overflow: auto;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2245,3 +2292,4 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     height: 1%;
     padding-top: 200px;
 }
+

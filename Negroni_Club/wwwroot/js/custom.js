@@ -100,8 +100,8 @@
             $('.slider-nav .slick-slide.slick-current').addClass('is-active');
         })
         .slick({
-            slidesToShow: 5,
-            slidesToScroll: 5,
+            slidesToShow: 4,
+            slidesToScroll: 4,
             dots: false,
             focusOnSelect: false,
             infinite: false,
@@ -109,29 +109,29 @@
                 breakpoint: 4000,
                 settings: {
                     arrows: false,
-                    slidesToShow: 5,
-                    slidesToScroll: 5,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                 }
             }, {
                 breakpoint: 1024,
                 settings: {
                     arrows: false,
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                }
-            }, {
-                breakpoint: 769,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                }
-            }, {
-                breakpoint: 420,
-                settings: {
-                    arrows: false,
                     slidesToShow: 3,
                     slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 600,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             }]
         });
@@ -324,6 +324,23 @@
             return false;
         });
     });
+
+
+
+    var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
+    var ps = new PerfectScrollbar(myCustomScrollbar);
+
+    var scrollbarY = myCustomScrollbar.querySelector('.ps__rail-y');
+
+    myCustomScrollbar.onscroll = function () {
+        scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;
+    }
+
+
+
+
+
+
 
 
 })(jQuery);

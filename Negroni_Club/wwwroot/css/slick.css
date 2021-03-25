@@ -1,6 +1,7 @@
 /* Slider */
 .slick-slider
 {
+    padding-bottom: 15px;
     position: relative;
 
     display: block;
@@ -50,12 +51,10 @@
             transform: translate3d(0, 0, 0);
 }
 
-.slick-track
-{
+.slick-track {
     position: relative;
     top: 0;
     left: 0;
-
     display: block;
 }
 .slick-track:before,

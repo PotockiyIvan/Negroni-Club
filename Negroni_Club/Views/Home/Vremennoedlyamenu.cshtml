@@ -29,7 +29,9 @@
                     <div class="slider slider-single ">
 
                         @foreach (DishesСategory entity in categories)
-                        {<div>
+                        {
+                            <div id="foods" class="clearfix grid">
+
                                 @{
                                     var dishes = entity.Dishes;
 
@@ -37,17 +39,17 @@
                                     {
                                         foreach (Dish dish in dishes)
                                         {
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                                <div class="offer-item">
-                                                    <a href="~/images/dish Images/@dish.TitleImagePath" data-lightbox="Блюдо-1">
-                                                        <img src="images/dish Images/@dish.TitleImagePath?width=1200&height=1200" alt="" class="img-responsive">
-                                                    </a>
-                                                    <div>
-                                                        <h3>@dish.Title</h3>
-                                                        <p> @dish.Subtitle</p>
-                                                    </div>
-                                                    <span class="offer-price">475р</span>
-                                                </div>
+                                            <div>
+                                                <figure class="effect-milo  wowload fadeInUp">
+                                                    <img src="images/dish Images/@dish.TitleImagePath?width=1920&height=1280" alt="img01" />
+                                                    <figcaption>
+                                                        <h2>@dish.Title</h2>
+                                                        <p>
+                                                            @dish.Subtitle<br>
+                                                            <a href="images/dish Images/@dish.TitleImagePath?width=1920&height=1280" title="1" data-gallery>Приблизить</a>
+                                                        </p>
+                                                    </figcaption>
+                                                </figure>
                                             </div>
                                         }
                                     }
