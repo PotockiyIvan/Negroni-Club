@@ -881,8 +881,8 @@ to {
     color: #fff;
 }
 
-#owl-demo .item {
-    margin: 15px;
+#owl-demo .item {/*
+    margin: 15px;*/
     position: relative;
 }
 
@@ -898,7 +898,7 @@ to {
 }
 
 .item-type-zoom {
-    border: 4px solid #fff;
+    /*border: 4px solid #fff;*/
 }
 
     .item-type-zoom .item-hover {
