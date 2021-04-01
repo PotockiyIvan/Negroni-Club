@@ -58,28 +58,89 @@
         CAROUSEL 
     =========================*/
 
+    //$(document).ready(function () {
+    //    $("#owl-demo").owlCarousel({
+    //        /*autoPlay: 5000,*/ //Set AutoPlay to 3 seconds
+    //        items: 1,
+    //        animateIn: 'fadeIn',
+    //        animateOut: 'bounceOutUp',
+    //        singleItem: true,
+    //        dots: false,
+    //        itemsDesktop: [1199, 1],
+    //        itemsDesktopSmall: [979, 1]
+    //    });
+    //});
+
+    //$(document).ready(function () {
+    //   const slider = $("#owl-team").owlCarousel({
+    //        autoPlay: 3000, //Set AutoPlay to 3 seconds
+    //        items: 3,
+    //        itemsDesktop: [1199, 3],
+    //        itemsDesktopSmall: [979, 2]
+
+    //    });
+    //});
+
+    /* =========================
+        CAROUSEL V2
+    =========================*/
+   
+
+    $(document).ready(function () {
+        $("#owl-team").owlCarousel({
+            items: 3,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2500,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            responsive: {
+                0: {
+                    items:1
+                },
+                625: {
+                    items:2
+                },
+                1100: {
+                    items:3
+                }
+            }
+            //itemsDesktop: [1199, 3],
+            //itemsDesktopSmall: [979, 2]
+
+        });
+    });
+
+
     $(document).ready(function () {
         $("#owl-demo").owlCarousel({
             /*autoPlay: 5000,*/ //Set AutoPlay to 3 seconds
             items: 1,
-            animateIn: 'fadeIn',
-            animateOut: 'bounceOutUp',
+            dots:true,
             singleItem: true,
-            dots: false,
-            itemsDesktop: [1199, 1],
-            itemsDesktopSmall: [979, 1]
+            dotsEach: true,
+            dotsSpeed: 1000,
+            animateIn: 'fadeIn',
+            animateOut: 'fadeOut',
+            mouseDrag:false
+            //itemsDesktop: [1199, 1],
+            //itemsDesktopSmall: [979, 1]
         });
     });
 
-    $(document).ready(function () {
-        $("#owl-team").owlCarousel({
-            autoPlay: 3000, //Set AutoPlay to 3 seconds
-            items: 3,
-            itemsDesktop: [1199, 3],
-            itemsDesktopSmall: [979, 2]
 
-        });
-    });
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* ========================
         SLIDER - TAB 

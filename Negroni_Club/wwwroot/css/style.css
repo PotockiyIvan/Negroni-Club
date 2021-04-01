@@ -782,7 +782,7 @@ to {
 }
 
 .pad-top-100 {
-    padding-top: 90px;
+    padding-top: 70px;
 }
 
 .pad-bottom-100 {
@@ -985,19 +985,45 @@ to {
     padding-bottom: 40px;
 }
 
-    .special-box .owl-theme .owl-controls .owl-page.active span {
-        /*background:#e75b1e;*/
+    .special-box .owl-theme .owl-controls .owl-page.active {
+        background:#e75b1e;
         height: 16px;
         width: 16px;
     }
 
-    .special-box .owl-theme .owl-controls .owl-page span {
+    .special-box .owl-theme .owl-controls .owl-page   {
         border: 2px solid #fff;
         opacity: 1;
         background: #202020;
         height: 16px;
         width: 16px;
     }
+
+#owl-demo .owl-dots{
+    text-align:center;
+}
+
+#owl-demo button.owl-dot.active {
+    background: #e75b1e;
+    height: 16px;
+    width: 16px;
+    outline: none;
+}
+#owl-demo button.owl-dot:focus {
+    outline: none;
+}
+
+#owl-demo button.owl-dot {
+    border: 2px solid #202020;
+    opacity: 1;
+    background: #e6e6e6;
+    height: 16px;
+    width: 16px;
+    margin-left: 7px;
+    border-radius: 50%;
+    opacity: 1;
+}
+  
 
 /*------------------------------------------------------------------
     MENU AREA
@@ -1498,6 +1524,21 @@ to {
     transition: .5s ease-in-out;
     text-transform: uppercase;
     background-color: #2323239c;
+}
+
+#blink5 p {
+  -webkit-animation: blink5 2s linear infinite;
+  animation: blink5 2s linear infinite;
+}
+@-webkit-keyframes blink5 {
+  0% { color:rgb(169,0,0); }
+  50% { color: rgb(200, 0, 0); }
+  100% { color: rgb(169,0,0); }
+}
+@keyframes blink5 {
+  0% { color: rgb(169,0,0); }
+  50% { color: rgb(200, 0, 0); }
+  100% { color: rgb(169,0,0); }
 }
 
 .grid-portfolio .portfolio-item:hover p {
@@ -2223,7 +2264,10 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
         }
 
         .footer-box-d ul li span {
-            color: #666;
+            color: rgb(169, 0, 0);
+            text-shadow: 0 -1px rgba(0,0,0,.1);
+            -webkit-animation: pulsate 2s linear infinite;
+            animation: pulsate 2s linear infinite;
         }
 
 /*------------------------------------------------------------------

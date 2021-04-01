@@ -308,7 +308,13 @@
 	}
 }
 @media (max-width: 600px) {
+	/*.text-col h2 {
+		font-size: 20px;
+	}
 	
+	.text-col h3{
+		font-size:14px;
+	}*/
 }
 @media (max-width: 480px) {
 	.offer-item img{

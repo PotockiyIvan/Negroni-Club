@@ -13,14 +13,14 @@
                 <div class="team-box">
 
                     <div class="row">
-                        <div id="owl-team">
+                        <div class="owl-carousel" id="owl-team" >
                             @if (Model.Any())
                             {
                                 foreach (Teammate entyty in Model)
                                 {
                                     <div class="sf-team">
                                         <div class="thumb">
-                                            <a href="#"><img src="images/@entyty.TitleImagePath?width=390&height=500" alt=""></a>
+                                            <img src="images/@entyty.TitleImagePath?width=390&height=500" alt="">
                                         </div>
                                         <div class="text-col">
                                             <h2>@entyty.Title</h2>
