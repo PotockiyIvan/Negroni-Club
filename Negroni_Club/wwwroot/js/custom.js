@@ -116,13 +116,11 @@
         $("#owl-demo").owlCarousel({
             /*autoPlay: 5000,*/ //Set AutoPlay to 3 seconds
             items: 1,
-            dots:true,
+            dots:false,
             singleItem: true,
-            dotsEach: true,
-            dotsSpeed: 1000,
             animateIn: 'fadeIn',
             animateOut: 'fadeOut',
-            mouseDrag:false
+            mouseDrag:true
             //itemsDesktop: [1199, 1],
             //itemsDesktopSmall: [979, 1]
         });

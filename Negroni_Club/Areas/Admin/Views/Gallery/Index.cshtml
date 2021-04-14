@@ -1,0 +1,33 @@
+﻿@{
+    DataManager dataManager = ViewBag.DataManager;
+    var galleryAlbums = dataManager.GalleryAlbums.GetGalleryAlbums();
+}
+
+<div class="gallery-main pad-top-200 pad-bottom-100">
+    <div class="container">
+        <div class="grid-portfolio my-custom-scrollbar" id="portfolio">
+            <div class="row" id="blink5">
+
+                @foreach (GalleryAlbum album in galleryAlbums)
+                {
+                    <div class="col-md-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <div class="thumb">
+                                <a asp-area="Admin" asp-controller="Gallery" asp-action="EditAlbum" asp-route-id="@album.Id">
+                                    <div class="hover-effect">
+                                        <div class="hover-content">
+                                            <p>@album.Title @album.EventDate</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="gallery-image">
+                                    <img src="~/images/Gallery/@album.TitleImagePath">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

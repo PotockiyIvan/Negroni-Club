@@ -29,6 +29,12 @@ namespace Negroni_Club.Domain.Entities
         public override string Text { get; set; }
 
         /// <summary>
+        /// Цена блюда.
+        /// </summary>
+        [Display(Name ="Цена")]
+        public int Price { get; set; }
+
+        /// <summary>
         /// Фото блюда.
         /// </summary>
         [Display(Name = "Фото блюда")]

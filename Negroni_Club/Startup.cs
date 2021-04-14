@@ -48,6 +48,8 @@ namespace Negroni_Club
             services.AddTransient<ITextFieldsRepository, EFTextFieldsRepository>();
             services.AddTransient<ITitleImageRepository, EFTitleImageRepository>();
             services.AddTransient<ITeammateRepository, EFTeammateRepository>();
+            services.AddTransient<IGalleryAlbumRepository, EFGalleryAlbumRepository>();
+            services.AddTransient<IAlbumPhotoRepository, EFAlbumPhotoRepository>();
             services.AddTransient<DataManager>();
 
 

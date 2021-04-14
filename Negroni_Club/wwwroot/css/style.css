@@ -785,6 +785,10 @@ to {
     padding-top: 70px;
 }
 
+.pad-top-200{
+    padding-top:200px;
+}
+
 .pad-bottom-100 {
     padding-bottom: 90px;
 }
@@ -983,6 +987,10 @@ to {
 
 .special-box {
     padding-bottom: 40px;
+}
+
+.special-box2{
+    padding:0;
 }
 
     .special-box .owl-theme .owl-controls .owl-page.active {
@@ -2129,9 +2137,9 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 }
 
 .footer-box {
-    background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(..images/footer_background.jpg);
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
-    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
+    background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(..images/Footer_bg.jpg);
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/Footer_bg.jpg);
+    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/Footer_bg.jpg);
     background-color: #111;
     background-position: center;
     background-repeat: no-repeat;

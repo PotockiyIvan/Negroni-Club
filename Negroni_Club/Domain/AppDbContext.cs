@@ -22,6 +22,8 @@ namespace Negroni_Club.Domain
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<DishesСategory> DishesCategories { get; set; }
         public DbSet<TitleImage> TitleImages { get; set; }
+        public DbSet<GalleryAlbum> GalleryAlbums { get; set; }
+        public DbSet<AlbumPhoto> AlbumPhotos { get; set; }
         public DbSet<Negroni_Club.Models.LoginViewModel> LoginViewModel { get; set; }
 
         //Заполняем базы данных стартовыми значениями

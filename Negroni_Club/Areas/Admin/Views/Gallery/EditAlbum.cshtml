@@ -1,4 +1,4 @@
-﻿@model Dish
+﻿@model GalleryAlbum
 @{
     string strTitle = "Редактировать запись";
     ViewBag.Title = strTitle;
@@ -12,7 +12,6 @@
     <div>
         <form asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" method="post" enctype="multipart/form-data">
             <input type="hidden" name="Id" value="@Model.Id" />
-            <input type="hidden" name="DishesСategoryId" value="@Model.DishesСategoryId" />
             <input type="hidden" asp-for="DateAdded" />
             <input type="hidden" asp-for="TitleImagePath" />
 
@@ -26,22 +25,19 @@
                 <span asp-validation-for="Title"></span>
             </div>
             <div class="div-box Large-Input">
-                <label asp-for="Subtitle"></label>
-                <input asp-for="Subtitle" />
-                <span asp-validation-for="Subtitle"></span>
-            </div>
-            <div class="div-box">
-                <label asp-for="Text"></label>
-                <textarea asp-for="Text"></textarea>
-                <span asp-validation-for="Text"></span>
-            </div>
-            <div class="div-box">
-                <label asp-for="Price"></label>
-                <textarea asp-for="Price"></textarea>
-                <span asp-validation-for="Price"></span>
+                <label asp-for="EventDate"></label>
+                <input asp-for="EventDate" />
+                <span asp-validation-for="EventDate"></span>
             </div>
             <div class="div-box">
                 <label asp-for="TitleImagePath"></label>
+                <input type="file" name="titleImageFile" id="titleImageFile" />
+                <div>
+                    <img class="img-block" src="~/images/dish images/@Model.TitleImagePath" />
+                </div>
+            </div>
+            <div class="div-box">
+                <label asp-for="AlbumPhotos"></label>
                 <input type="file" name="titleImageFile" id="titleImageFile" />
                 <div>
                     <img class="img-block" src="~/images/dish images/@Model.TitleImagePath" />

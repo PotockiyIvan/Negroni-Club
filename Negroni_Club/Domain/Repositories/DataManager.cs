@@ -19,19 +19,25 @@ namespace Negroni_Club.Domain.Repositories
         public IDishesCategoryRepository DishesCategories {get;set;}
         public ITitleImageRepository TitleImages { get; set; }
         public ITeammateRepository Teammates { get; set; }
+        public IGalleryAlbumRepository GalleryAlbums { get; set; }
+        public IAlbumPhotoRepository AlbumPhotos { get; set; }
 
 
         public DataManager(ITextFieldsRepository textFieldsRepository,
                            IDishRepository dishRepository,
                            IDishesCategoryRepository dishesCategoryRepository,
                            ITitleImageRepository titleImageRepository,
-                           ITeammateRepository teammateRepository)
+                           ITeammateRepository teammateRepository,
+                           IGalleryAlbumRepository galleryAlbumRepository,
+                           IAlbumPhotoRepository albumPhotoRepository)
         {
             TextFields = textFieldsRepository;
             Dishes = dishRepository;
             DishesCategories = dishesCategoryRepository;
             TitleImages = titleImageRepository;
             Teammates = teammateRepository;
+            GalleryAlbums = galleryAlbumRepository;
+            AlbumPhotos = albumPhotoRepository;
         }
     }
 }
