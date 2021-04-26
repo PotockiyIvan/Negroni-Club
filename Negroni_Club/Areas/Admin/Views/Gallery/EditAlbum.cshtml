@@ -10,7 +10,7 @@
 <div class="AdminMenu">
     <h2>@strTitle</h2>
     <div>
-        <form asp-area="Admin" asp-controller="Dishes" asp-action="EditDish" method="post" enctype="multipart/form-data">
+        <form asp-area="Admin" asp-controller="Gallery" asp-action="EditAlbum" method="post" enctype="multipart/form-data">
             <input type="hidden" name="Id" value="@Model.Id" />
             <input type="hidden" asp-for="DateAdded" />
             <input type="hidden" asp-for="TitleImagePath" />
@@ -26,22 +26,15 @@
             </div>
             <div class="div-box Large-Input">
                 <label asp-for="EventDate"></label>
-                <input asp-for="EventDate" />
+                <input type="date" asp-for="EventDate" />
                 <span asp-validation-for="EventDate"></span>
             </div>
             <div class="div-box">
-                <label asp-for="TitleImagePath"></label>
-                <input type="file" name="titleImageFile" id="titleImageFile" />
-                <div>
-                    <img class="img-block" src="~/images/dish images/@Model.TitleImagePath" />
-                </div>
-            </div>
-            <div class="div-box">
                 <label asp-for="AlbumPhotos"></label>
-                <input type="file" name="titleImageFile" id="titleImageFile" />
-                <div>
+                <input type="file" multiple name="photos" id="photos" />
+                @*<div>
                     <img class="img-block" src="~/images/dish images/@Model.TitleImagePath" />
-                </div>
+                </div>*@
             </div>
             <input type="submit" value="Сохранить" />
         </form>

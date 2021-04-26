@@ -32,5 +32,12 @@ namespace Negroni_Club.Domain.Repositories.Abstract
         /// </summary>
         /// <param name="id">Первичный ключ.</param>
         void DeleteGalleryAlbum(Guid id);
+
+        /// <summary>
+        /// Получить случайное фото.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public AlbumPhoto GetRandomPhoto(Guid id);
     }
 }

@@ -58,5 +58,21 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
                 context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
         }
+
+        /// <summary>
+        /// Получить случайное фото.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public AlbumPhoto GetRandomPhoto(Guid id)
+        {
+            GalleryAlbum album = GetGalleryAlbumById(id);
+            var albumPhotos = album.AlbumPhotos;
+            var random = new Random();
+            int index = random.Next(albumPhotos.Count());
+            AlbumPhoto albumPhoto = albumPhotos.ElementAt(index);
+
+            return albumPhoto;
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
 
         public IActionResult EditTeammate(Guid id)
         {
-            var entity = id == default ? new Teammate() : dataManager.Teammates.GetTeammateById(id);//Поищи че это такое в видосе
+            var entity = id == default ? new Teammate() : dataManager.Teammates.GetTeammateById(id);//тернарный оператор
             return View(entity);
             //return View(dataManager.Teammates.GetTeammates());
         }

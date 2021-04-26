@@ -32,5 +32,6 @@ namespace Negroni_Club.Domain.Repositories.Abstract
         /// </summary>
         /// <param name="id">Первичный ключ.</param>
         void DeleteAlbumPhoto(Guid id);
+
     }
 }

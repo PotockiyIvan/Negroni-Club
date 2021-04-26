@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Negroni_Club.Domain.Entities;
 using Negroni_Club.Domain.Repositories.Abstract;
+using Negroni_Club.Domain.Repositories.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,5 +59,6 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
                 context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
         }
+
     }
 }
