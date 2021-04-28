@@ -28,47 +28,98 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(ViewBag.DataManager);
         }
 
+        /// <summary>
+        /// Создать или редактировать альбом.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
         public IActionResult EditAlbum(Guid id)
         {
             var entity = id == default ? new GalleryAlbum() : dataManager.GalleryAlbums.GetGalleryAlbumById(id);
             return View(entity);
         }
 
+        /// <summary>
+        /// Создать или редактировать альбом.
+        /// </summary>
+        /// <param name="model">Модель альбома.</param>
+        /// <param name="photos">Коллекция фотографий.</param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult EditAlbum(GalleryAlbum model,List<IFormFile> photos)
+        public IActionResult EditAlbum(GalleryAlbum model, List<IFormFile> photos)
         {
             if (ModelState.IsValid)
             {
-                if(photos != null)
+                string albumFolderPath = hostingEnvironment.WebRootPath + "/images/gallery/album from " + model.EventDate.ToShortDateString();
+
+                //Действие для записи нового альбома
+                if (photos != null & model.AlbumPhotos == null)
                 {
-                    string albumFolderPath = hostingEnvironment.WebRootPath +"/images/gallery/album from " + model.EventDate.ToShortDateString();
                     Directory.CreateDirectory(albumFolderPath);
-
                     model.AlbumPhotos = new List<AlbumPhoto>();
-
-                    foreach (IFormFile photo in photos)
-                    {
-                        AlbumPhoto albumPhoto = new AlbumPhoto { AlbumPhotoPath = photo.FileName };
-                        model.AlbumPhotos.Add(albumPhoto);
-                        
-                        using (var stream = new FileStream(Path.Combine(albumFolderPath, photo.FileName), FileMode.Create))
-                        {
-                            photo.CopyTo(stream);
-                        }
-                    }
+                    SavePhotos(model, photos, albumFolderPath);
                 }
 
-                dataManager.GalleryAlbums.SaveGalleryAlbum(model);
-                foreach (AlbumPhoto photo in model.AlbumPhotos)
-                {
-                    dataManager.AlbumPhotos.SaveAlbumPhoto(photo);
-                }
+                //Действие для дополнения альбома
+                else if (photos != null & model.AlbumPhotos.Count > 0)
+                    SavePhotos(model, photos, albumFolderPath);
+
+                else//Действие для изменения свойств модели без добавления фото
+                    dataManager.GalleryAlbums.SaveGalleryAlbum(model);
+
 
                 ViewBag.DataManager = dataManager;
-                return View("Index",ViewBag.DataManager);
+                return View("Index", ViewBag.DataManager);
             }
 
             return View(model);
+        }
+
+        /// <summary>
+        /// Удалить альбом.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult DeleteAlbum(Guid id)
+        {
+            var album = dataManager.GalleryAlbums.GetGalleryAlbumById(id);
+
+            Directory.Delete(hostingEnvironment.WebRootPath + "/images/gallery/album from " + album.EventDate.ToShortDateString(), true);
+
+            foreach (AlbumPhoto photo in album.AlbumPhotos.ToList())
+                dataManager.AlbumPhotos.DeleteAlbumPhoto(photo.Id);
+
+            dataManager.GalleryAlbums.DeleteGalleryAlbum(id);
+
+            ViewBag.DataManager = dataManager;
+            return View("Index", ViewBag.DataManager);
+        }
+
+
+        /// <summary>
+        /// Сохранить фотографии.
+        /// </summary>
+        /// <param name="model">Модель альбома.</param>
+        /// <param name="photos">Коллекция фотографий.</param>
+        /// <param name="albumFolderPath">Путь к папке альбома.</param>
+        private void SavePhotos(GalleryAlbum model, List<IFormFile> photos, string albumFolderPath)
+        {
+            foreach (IFormFile photo in photos)
+            {
+                AlbumPhoto albumPhoto = new AlbumPhoto { AlbumPhotoPath = photo.FileName };
+                model.AlbumPhotos.Add(albumPhoto);
+
+                using (var stream = new FileStream(Path.Combine(albumFolderPath, photo.FileName), FileMode.Create))
+                    photo.CopyTo(stream);
+
+            }
+
+            dataManager.GalleryAlbums.SaveGalleryAlbum(model);
+
+            foreach (AlbumPhoto photo in model.AlbumPhotos)
+                dataManager.AlbumPhotos.SaveAlbumPhoto(photo);
+
         }
     }
 }

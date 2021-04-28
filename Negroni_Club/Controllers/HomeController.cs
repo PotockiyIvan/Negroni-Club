@@ -37,6 +37,14 @@ namespace Negroni_Club.Controllers
         //    return PartialView(dataManager.TextFields.GetTextFieldByCodeWord("AboutUs"));
         //}
 
+        public IActionResult AlbumPhotoList(Guid id)
+        {
+            var album = dataManager.GalleryAlbums.GetGalleryAlbumById(id);
+
+            return View("AlbumPhotoList", album);
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

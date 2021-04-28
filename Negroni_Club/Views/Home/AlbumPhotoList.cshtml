@@ -1,0 +1,61 @@
+﻿@model GalleryAlbum
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Site CSS -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/light-box.css" rel="stylesheet" />
+
+    <!--Site Icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/images/site icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/site icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/site icon/favicon-16x16.png">
+    <link rel="manifest" href="~/images/site icon/site.webmanifest">
+    <link rel="mask-icon" href="~/images/site icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#b50000">
+</head>
+<body>
+    <div id="gallery" class="gallery-main">
+        <div>
+            <div class="grid-portfolio " id="portfolio">
+                <div class="row" id="blink5">
+                    @foreach (AlbumPhoto album in Model.AlbumPhotos)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <div class="gallery-image">
+                                        <a href="~/images/gallery/album from @Model.EventDate.ToShortDateString()/@album.AlbumPhotoPath" data-lightbox="image-2">
+                                            <img src="~/images/gallery/album from @Model.EventDate.ToShortDateString()/@album.AlbumPhotoPath?width=1920&height=1280">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/all.js"></script>
+    <script src="~/js/touchSwipe.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+</body>
+</html>
+
+
+
