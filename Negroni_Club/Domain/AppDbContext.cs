@@ -99,8 +99,8 @@ namespace Negroni_Club.Domain
             modelBuilder.Entity<TextField>().HasData(new TextField
             {
                 Id = new Guid("eadc6d86-d236-4dea-8b61-fdec8b2fcdc0"),
-                CodeWord = "OrderHome",
-                Title = "Закажи Домой"
+                CodeWord = "Events",
+                Title = "События"
             });
 
             modelBuilder.Entity<TextField>().HasData(new TextField
@@ -117,12 +117,12 @@ namespace Negroni_Club.Domain
             //    Title = "Наша Команда"
             //});
 
-            modelBuilder.Entity<TextField>().HasData(new TextField
-            {
-                Id = new Guid("ab6a1906-5024-4cb2-9111-82b36171d994"),
-                CodeWord = "Gallery",
-                Title = "Галерея"
-            });
+            //modelBuilder.Entity<TextField>().HasData(new TextField
+            //{
+            //    Id = new Guid("ab6a1906-5024-4cb2-9111-82b36171d994"),
+            //    CodeWord = "Gallery",
+            //    Title = "Галерея"
+            //});
 
             modelBuilder.Entity<TextField>().HasData(new TextField
             {
@@ -159,8 +159,23 @@ namespace Negroni_Club.Domain
                   CodeWord = "AboutUsSmallTitleImage",
                   TextFieldId = new Guid("36b3ced4-93eb-477b-81ce-c9ebe0e6b1fe"),
                   TitleImagePath = "about-inset.jpg"
+              },
+              new TitleImage
+              {
+                  Id = new Guid("9b85efd3-9e21-4af7-9baf-60dcddb8e1ba"),
+                  CodeWord = "EventsBigTitleImage",
+                  TextFieldId = new Guid("eadc6d86-d236-4dea-8b61-fdec8b2fcdc0"),
+                  TitleImagePath = "afisha.jpg"
+              },
+              new TitleImage
+              {
+                  Id = new Guid("8a291424-53cb-49a6-a09f-a93ca5d462ca"),
+                  CodeWord = "EventsSmallTitleImage",
+                  TextFieldId = new Guid("eadc6d86-d236-4dea-8b61-fdec8b2fcdc0"),
+                  TitleImagePath = "afishasmall.jpg"
               });
 
+            
            
 
             modelBuilder.Entity<DishesСategory>().HasData(

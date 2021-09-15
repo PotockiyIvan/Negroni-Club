@@ -1,4 +1,5 @@
-﻿
+﻿@model TextField
+
 <div id="events" @*class="special-menu pad-top-100 parallax"*@>
     <div class="container-fluid">
         <div class="row">
@@ -9,60 +10,80 @@
                     </div>*@
                 <div class=" wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                     <div class="owl-carousel owl-loaded owl-drag parallax" id="owl-demo">
-                        <div class="item item-type-zoom">
-                            @*<a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            SALMON STEAK
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
+
+                        @{
+                            var bigTitleImages = Model.TitleImages.FindAll(x => x.CodeWord == "EventsBigTitleImage").OrderBy(x => x.DateAdded).ToList();
+                            var smallTitleImages = Model.TitleImages.FindAll(x => x.CodeWord == "EventsSmallTitleImage").OrderBy(x => x.DateAdded).ToList();
+                        }
+
+                        @foreach (TitleImage titleImage in bigTitleImages)
+                        {
+                            <div class="item item-type-zoom">
+                                <div class="item-img">
+                                    <picture>
+                                        <source media="(min-width: 750px)"
+                                                srcset="~/images/events/@titleImage.TitleImagePath" />
+                                        <img src="~/images/events/@smallTitleImages.FirstOrDefault(x =>x.DateAdded.Date == titleImage.DateAdded.Date)" alt="sp-menu">
+                                    </picture>
+                                </div>
+                            </div>
+                        }
+
+
+                        <!--<div class="item item-type-zoom">-->
+                        @*<a href="#" class="item-hover">
+                                <div class="item-info">
+                                    <div class="headline">
+                                        SALMON STEAK
+                                        <div class="line"></div>
+                                        <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
                                     </div>
-                                </a>*@
-                            <div class="item-img">
+                                </div>
+                            </a>*@
+                        <!--<div class="item-img">
                                 <picture>
                                     <source media="(min-width: 750px)"
                                             srcset="~/images/afisha.jpg" />
-                                    <img src="~/images/111111.jpg" alt="sp-menu">
+                                    <img src="~/images/afishasmall.jpg" alt="sp-menu">
                                 </picture>
                             </div>
                         </div>
-                        <div class="item item-type-zoom">
-                            @*<a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            ITALIAN PIZZA
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
+                        <div class="item item-type-zoom">-->
+                        @*<a href="#" class="item-hover">
+                                <div class="item-info">
+                                    <div class="headline">
+                                        ITALIAN PIZZA
+                                        <div class="line"></div>
+                                        <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
                                     </div>
-                                </a>*@
-                            <div class="item-img">
+                                </div>
+                            </a>*@
+                        <!--<div class="item-img">
                                 <picture>
                                     <source media="(min-width: 750px)"
                                             srcset="~/images/afisha.jpg" />
-                                    <img src="~/images/111111.jpg" alt="sp-menu">
+                                    <img src="~/images/afishasmall.jpg" alt="sp-menu">
                                 </picture>
                             </div>
                         </div>
-                        <div class="item item-type-zoom">
-                            @*<a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            VEG. ROLL
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
+                        <div class="item item-type-zoom">-->
+                        @*<a href="#" class="item-hover">
+                                <div class="item-info">
+                                    <div class="headline">
+                                        VEG. ROLL
+                                        <div class="line"></div>
+                                        <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
                                     </div>
-                                </a>*@
-                            <div class="item-img">
+                                </div>
+                            </a>*@
+                        <!--<div class="item-img">
                                 <picture>
                                     <source media="(min-width: 750px)"
                                             srcset="~/images/afisha.jpg" />
-                                    <img src="~/images/111111.jpg" alt="sp-menu">
+                                    <img src="~/images/afishasmall.jpg" alt="sp-menu">
                                 </picture>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <!-- end special-box -->

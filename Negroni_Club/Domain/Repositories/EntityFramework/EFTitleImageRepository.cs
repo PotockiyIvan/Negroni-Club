@@ -42,7 +42,6 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
             context.SaveChanges();
         }
 
-
         /// <summary>
         /// Выбрать все титульные картинки.
         /// </summary>

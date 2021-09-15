@@ -26,7 +26,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View(dataManager.Dishes.GetDishes());
+            return View();
         }
 
         #region EditMenu
@@ -82,38 +82,27 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(entity);
         }
 
-        [HttpPost]//Получаем от html формы модель ,проверяем ее и сохраняем
+        /// <summary>
+        /// Редактировать О нас.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="bigTitleImage"></param>
+        /// <param name="smallTitleImage"></param>
+        /// <returns></returns>
+        [HttpPost]
         public IActionResult EditAboutUs(TextField model, IFormFile bigTitleImage, IFormFile smallTitleImage)//Интерфейс представляет собой файл отправленный через http запрос
         {
-            /*В этом методе мы получаем модель и два файла - картинки,далее если они не равны нулю,
-             *сохраняем эти картинки в wwwroot попутно удаляя старые именяем 
-             *путь в свойстве модели в бд и в связанной с ней таблицей.
-             *Подумай как в дальнейшем вынести эту логику в отдельный метод
-            */
-
             if (ModelState.IsValid)
             {
                 model.TitleImages = dataManager.TitleImages.GetTitleImages().ToList().FindAll(x => x.CodeWord == "AboutUsBigTitleImage" || x.CodeWord == "AboutUsSmallTitleImage");
 
                 if (bigTitleImage != null)
-                {
-                    using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", bigTitleImage.FileName), FileMode.Create))
-                    {
-                        System.IO.File.Delete(Path.Combine(hostingEnvironment.WebRootPath, "images/", model.TitleImages.FirstOrDefault(x => x.CodeWord == "AboutUsBigTitleImage").TitleImagePath));
-                        model.TitleImages.FindAll(x => x.CodeWord == "AboutUsBigTitleImage").ForEach(s => s.TitleImagePath = bigTitleImage.FileName);
-                        bigTitleImage.CopyTo(stream);//НЕПОНЯТНО!!!!!
-                    }
-                }
+                    SaveTitleImage("AboutUsBigTitleImage", bigTitleImage, model);
 
                 if (smallTitleImage != null)
-                {
-                    using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", smallTitleImage.FileName), FileMode.Create))
-                    {
-                        System.IO.File.Delete(Path.Combine(hostingEnvironment.WebRootPath, "images/", model.TitleImages.FirstOrDefault(x => x.CodeWord == "AboutUsSmallTitleImage").TitleImagePath));
-                        model.TitleImages.FindAll(x => x.CodeWord == "AboutUsSmallTitleImage").ForEach(s => s.TitleImagePath = smallTitleImage.FileName);
-                        smallTitleImage.CopyTo(stream);//НЕПОНЯТНО!!!!!
-                    }
-                }
+                    SaveTitleImage("AboutUsSmallTitleImage", smallTitleImage, model);
+
+
                 dataManager.TextFields.SaveTextField(model);
 
                 return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
@@ -122,5 +111,68 @@ namespace Negroni_Club.Areas.Admin.Controllers
         }
         #endregion
 
+        #region EditEvents
+        public IActionResult EditEvents(string codeWord)
+        {
+            var entity = dataManager.TextFields.GetTextFieldByCodeWord(codeWord);
+            return View(entity);
+        }
+
+        /// <summary>
+        /// Редактировать События.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="bigTitleImage"></param>
+        /// <param name="smallTitleImage"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult EditEvents(TextField model, IFormFile bigTitleImage, IFormFile smallTitleImage)
+        {
+            if (ModelState.IsValid)
+            {
+                model.TitleImages = dataManager.TitleImages.GetTitleImages().ToList().FindAll(x => x.CodeWord == "EventsBigTitleImage" || x.CodeWord == "EventsSmallTitleImage");
+
+                if (bigTitleImage != null)
+                    SaveTitleImage("EventsBigTitleImage", bigTitleImage, model);
+
+                if (smallTitleImage != null)
+                    SaveTitleImage("EventsSmallTitleImage", smallTitleImage, model);
+
+
+                dataManager.TextFields.SaveTextField(model);
+
+                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+            }
+            return View(model);
+        }
+        #endregion
+
+        /// <summary>
+        /// Сохранить титульную картинку.
+        /// </summary>
+        /// <param name="codeWord">Кодовое слово.</param>
+        /// <param name="titleImage">Титульная картинка.</param>
+        /// <param name="model">Модель.</param>
+        private void SaveTitleImage(string codeWord, IFormFile titleImage, TextField model)
+        {
+            if (codeWord == "AboutUsBigTitleImage" || codeWord == "AboutUsSmallTitleImage")
+            {
+                using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", titleImage.FileName), FileMode.Create))
+                {
+                    System.IO.File.Delete(Path.Combine(hostingEnvironment.WebRootPath, "images/", model.TitleImages.FirstOrDefault(x => x.CodeWord == codeWord).TitleImagePath));
+                    model.TitleImages.FindAll(x => x.CodeWord == codeWord).ForEach(s => s.TitleImagePath = titleImage.FileName);
+                    titleImage.CopyTo(stream);
+                }
+            }
+            else if (codeWord == "EventsBigTitleImage" || codeWord == "EventsSmallTitleImage")
+            {
+                using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/events", titleImage.FileName), FileMode.Create))
+                {
+                    var titleImage2 = new TitleImage { TitleImagePath = titleImage.FileName, TextFieldId = model.Id, CodeWord = codeWord };
+                    dataManager.TitleImages.SaveTitleImage(titleImage2);
+                    titleImage.CopyTo(stream);
+                }
+            }
+        }
     }
 }

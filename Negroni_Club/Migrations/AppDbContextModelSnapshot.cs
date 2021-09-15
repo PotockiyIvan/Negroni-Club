@@ -49,7 +49,7 @@ namespace Negroni_Club.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "417b47d4-1e01-434d-8845-f9e46f067824",
+                            ConcurrencyStamp = "8f2b11c5-7986-41dd-9635-8eb5fe5d56f2",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -148,13 +148,13 @@ namespace Negroni_Club.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3e499eb6-796a-4166-b26b-fb7c58998948",
+                            ConcurrencyStamp = "49f3929f-d67b-4954-a667-3be21d40bc9e",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGmgwCOXcJsGjpksiEq+wB/klOX+MagVajX6D6xrIIfWbeVXRgnR3d3pxJPrtmS3eQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECZ1moG28uufm15c2xHyfXfs2xqONDqTr6N2nw63/M/dC91v89Ig4Nej3TpcY7VnXA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -347,140 +347,140 @@ namespace Negroni_Club.Migrations
                         new
                         {
                             Id = new Guid("e045f9d3-fee2-42a5-8578-129603b15473"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(6875),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(5546),
                             IndexNumber = 1,
                             Title = "Пасты"
                         },
                         new
                         {
                             Id = new Guid("7f17720a-132b-4921-8e95-db3f40ea3c2d"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7735),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6413),
                             IndexNumber = 2,
                             Title = "Салаты"
                         },
                         new
                         {
                             Id = new Guid("bdde9343-5528-415e-9b41-11d333bcf5b2"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7760),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6440),
                             IndexNumber = 3,
                             Title = "Бургеры"
                         },
                         new
                         {
                             Id = new Guid("4ea95bf7-cf8a-404d-91f0-939d61c861bd"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7763),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6443),
                             IndexNumber = 4,
                             Title = "Стейки"
                         },
                         new
                         {
                             Id = new Guid("2f76c06a-a672-4ba3-a10d-96a04581f343"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7766),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6446),
                             IndexNumber = 5,
                             Title = "Горячее"
                         },
                         new
                         {
                             Id = new Guid("4a4a8e00-4337-45fa-aa88-dca265975308"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7768),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6448),
                             IndexNumber = 6,
                             Title = "Шотландский Виски"
                         },
                         new
                         {
                             Id = new Guid("1dd9aba7-d5be-448a-a555-6ebe6137327a"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7770),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6451),
                             IndexNumber = 7,
                             Title = "Ирландский Виски"
                         },
                         new
                         {
                             Id = new Guid("7c4d8b49-cc12-4b60-a464-3edce0045d25"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7773),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6453),
                             IndexNumber = 8,
                             Title = "Японский Виски"
                         },
                         new
                         {
                             Id = new Guid("212282f7-4302-4668-bc27-b43fb4fe792c"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7776),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6456),
                             IndexNumber = 9,
                             Title = "Американский Виски"
                         },
                         new
                         {
                             Id = new Guid("5694c499-1687-48ce-a60a-1b04e44a8e53"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7778),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6458),
                             IndexNumber = 10,
                             Title = "Виски"
                         },
                         new
                         {
                             Id = new Guid("e2edbc7e-8764-484a-baf3-89a46f9519a4"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7780),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6461),
                             IndexNumber = 11,
                             Title = "Джин"
                         },
                         new
                         {
                             Id = new Guid("bc751392-ae59-4914-a4aa-7f24753cb0a6"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7782),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6463),
                             IndexNumber = 12,
                             Title = "Ром"
                         },
                         new
                         {
                             Id = new Guid("60613bbe-9f22-4e84-83f3-931b461dff38"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7785),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6465),
                             IndexNumber = 13,
                             Title = "Коньяк"
                         },
                         new
                         {
                             Id = new Guid("7787bc42-f3aa-4873-ad00-f36c71adb341"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7787),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6467),
                             IndexNumber = 14,
                             Title = "Бренди"
                         },
                         new
                         {
                             Id = new Guid("7b420447-6902-4dc9-8ff9-2652c7bf20f4"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7789),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6471),
                             IndexNumber = 15,
                             Title = "Текила"
                         },
                         new
                         {
                             Id = new Guid("62a1f1ba-2da7-4c38-b15b-de06701c0de3"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7792),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6473),
                             IndexNumber = 16,
                             Title = "Водка"
                         },
                         new
                         {
                             Id = new Guid("766275ef-4952-46ec-b06b-63c3a7162641"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7795),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6475),
                             IndexNumber = 17,
                             Title = "Апперитивы и Биттеры"
                         },
                         new
                         {
                             Id = new Guid("b29e55c8-ecfb-4399-9737-2eab0c2bdf27"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7797),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6478),
                             IndexNumber = 18,
                             Title = "Игристые Вина"
                         },
                         new
                         {
                             Id = new Guid("70af1f54-e61e-47a8-bc96-80dc1c26b8d8"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7800),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6480),
                             IndexNumber = 19,
                             Title = "Вина"
                         },
                         new
                         {
                             Id = new Guid("efa7dae2-f142-43c1-a8da-ee4a1e7e04bf"),
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(7802),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(6482),
                             IndexNumber = 20,
                             Title = "Коктейли"
                         });
@@ -581,7 +581,7 @@ namespace Negroni_Club.Migrations
                         {
                             Id = new Guid("1813e8ab-e0b9-44c0-addd-babf0cf80abd"),
                             CodeWord = "Banner",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 524, DateTimeKind.Utc).AddTicks(9902),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 273, DateTimeKind.Utc).AddTicks(8319),
                             Subtitle = "Место для громкой фразы",
                             Text = "Содержание заполняется администратором",
                             Title = "Информационная страница"
@@ -590,39 +590,31 @@ namespace Negroni_Club.Migrations
                         {
                             Id = new Guid("36b3ced4-93eb-477b-81ce-c9ebe0e6b1fe"),
                             CodeWord = "AboutUs",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(2292),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(988),
                             Text = "Содержание заполняется администратором",
                             Title = "О нас"
                         },
                         new
                         {
                             Id = new Guid("eadc6d86-d236-4dea-8b61-fdec8b2fcdc0"),
-                            CodeWord = "OrderHome",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(2857),
+                            CodeWord = "Events",
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(1584),
                             Text = "Содержание заполняется администратором",
-                            Title = "Закажи Домой"
+                            Title = "События"
                         },
                         new
                         {
                             Id = new Guid("ec3fdb67-de7f-41f6-9504-90d2043a5dfc"),
                             CodeWord = "Menu",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(2977),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(1614),
                             Text = "Содержание заполняется администратором",
                             Title = "Меню"
                         },
                         new
                         {
-                            Id = new Guid("ab6a1906-5024-4cb2-9111-82b36171d994"),
-                            CodeWord = "Gallery",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(2998),
-                            Text = "Содержание заполняется администратором",
-                            Title = "Галерея"
-                        },
-                        new
-                        {
                             Id = new Guid("ff9730cb-964e-46e2-b070-fa0e33c4ac89"),
                             CodeWord = "Blog",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(3021),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(1634),
                             Text = "Содержание заполняется администратором",
                             Title = "Блог"
                         },
@@ -630,7 +622,7 @@ namespace Negroni_Club.Migrations
                         {
                             Id = new Guid("8ad6e41f-e37e-428f-a713-3d77e3ddf862"),
                             CodeWord = "Footer",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(3040),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(1660),
                             Text = "Содержание заполняется администратором",
                             Title = "Футер"
                         });
@@ -666,7 +658,7 @@ namespace Negroni_Club.Migrations
                         {
                             Id = new Guid("013bf5e9-0b38-4ec2-90ae-b7060c8cbbce"),
                             CodeWord = "BannerBackground",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(3815),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(2459),
                             TextFieldId = new Guid("1813e8ab-e0b9-44c0-addd-babf0cf80abd"),
                             TitleImagePath = "banner.jpg"
                         },
@@ -674,7 +666,7 @@ namespace Negroni_Club.Migrations
                         {
                             Id = new Guid("463385f4-3b78-43ec-9849-7363397df7a3"),
                             CodeWord = "AboutUsBigTitleImage",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(6121),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(4750),
                             TextFieldId = new Guid("36b3ced4-93eb-477b-81ce-c9ebe0e6b1fe"),
                             TitleImagePath = "about-main.jpg"
                         },
@@ -682,9 +674,25 @@ namespace Negroni_Club.Migrations
                         {
                             Id = new Guid("39b8284c-6b8e-4ab7-ade3-bd42ae778267"),
                             CodeWord = "AboutUsSmallTitleImage",
-                            DateAdded = new DateTime(2021, 4, 13, 23, 28, 42, 525, DateTimeKind.Utc).AddTicks(6174),
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(4806),
                             TextFieldId = new Guid("36b3ced4-93eb-477b-81ce-c9ebe0e6b1fe"),
                             TitleImagePath = "about-inset.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("9b85efd3-9e21-4af7-9baf-60dcddb8e1ba"),
+                            CodeWord = "EventsBigTitleImage",
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(4810),
+                            TextFieldId = new Guid("eadc6d86-d236-4dea-8b61-fdec8b2fcdc0"),
+                            TitleImagePath = "afisha.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("8a291424-53cb-49a6-a09f-a93ca5d462ca"),
+                            CodeWord = "EventsSmallTitleImage",
+                            DateAdded = new DateTime(2021, 4, 28, 23, 10, 23, 274, DateTimeKind.Utc).AddTicks(4815),
+                            TextFieldId = new Guid("eadc6d86-d236-4dea-8b61-fdec8b2fcdc0"),
+                            TitleImagePath = "afishasmall.jpg"
                         });
                 });
 

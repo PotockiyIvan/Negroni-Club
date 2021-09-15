@@ -1,5 +1,4 @@
-﻿@model IQueryable<Dish>
-
+﻿
 @{
     string strTitle = "Панель администратора";
     ViewBag.Title = strTitle;
@@ -18,7 +17,7 @@
                             <h2>Редактировать блоки сайта</h2>
                             <a asp-area="Admin" asp-controller="Home" asp-action="EditBanner" asp-route-codeWord="Banner">Баннер</a>
                             <a asp-area="Admin" asp-controller="Home" asp-action="EditAboutUs" asp-route-codeWord="AboutUs">О нас</a>
-                            <a asp-area="Admin" asp-controller="Home" asp-action="EditAboutUs" asp-route-codeWord="AboutUs">События</a>
+                            <a asp-area="Admin" asp-controller="Home" asp-action="EditEvents" asp-route-codeWord="Events">События</a>
                             <a asp-area="Admin" asp-controller="Dishes" asp-action="Index">Редактировать Меню</a>
                             @*<a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="OrderHome">Закажи Домой</a>*@
                             <a asp-area="Admin" asp-controller="Teammate" asp-action="EditOurTeam">Наша Команда</a>
