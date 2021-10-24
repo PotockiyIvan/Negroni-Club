@@ -18,39 +18,22 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
             this.context = context;
         }
 
-        /// <summary>
-        /// Удалить фото.
-        /// </summary>
-        /// <param name="id"></param>
         public void DeleteAlbumPhoto(Guid id)
         {
             context.AlbumPhotos.Remove(GetAlbumPhotoById(id));
             context.SaveChanges();
         }
 
-        /// <summary>
-        /// Выбрать фото по id.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public AlbumPhoto GetAlbumPhotoById(Guid id)
         {
             return context.AlbumPhotos.FirstOrDefault(x => x.Id == id);
         }
 
-        /// <summary>
-        /// Сделать выборку всех фото.
-        /// </summary>
-        /// <returns></returns>
         public IQueryable<AlbumPhoto> GetAlbumPhotos()
         {
             return context.AlbumPhotos;
         }
 
-        /// <summary>
-        /// Сохранить фото.
-        /// </summary>
-        /// <param name="entity"></param>
         public void SaveAlbumPhoto(AlbumPhoto entity)
         {
             if (entity.Id == default)

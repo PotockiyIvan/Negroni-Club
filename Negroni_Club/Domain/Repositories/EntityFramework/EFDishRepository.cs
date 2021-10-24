@@ -17,39 +17,22 @@ namespace Negroni_Club.Domain.Repositories.EntityFramework
             this.context = context;
         }
 
-        /// <summary>
-        /// Удалить блюдо.
-        /// </summary>
-        /// <param name="id">Первичный ключ.</param>
         public void DeleteDish(Guid id)
         {
             context.Dishes.Remove(GetDishById(id));
             context.SaveChanges();
         }
 
-        /// <summary>
-        /// Выбрать все блюда.
-        /// </summary>
-        /// <returns></returns>
         public IQueryable<Dish> GetDishes()
         {
             return context.Dishes;
         }
 
-        /// <summary>
-        /// Выбрать блюдо по первичному ключу.
-        /// </summary>
-        /// <param name="id">Первичный ключ.</param>
-        /// <returns></returns>
         public Dish GetDishById(Guid id)
         {
             return context.Dishes.FirstOrDefault(x => x.Id == id);
         }
 
-        /// <summary>
-        /// Сохранить блюдо.
-        /// </summary>
-        /// <param name="entity">Сущность.</param>
         public void SaveDish(Dish entity)
         {
             if (entity.Id == default)

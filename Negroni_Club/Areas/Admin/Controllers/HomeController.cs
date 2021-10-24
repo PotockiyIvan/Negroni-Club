@@ -16,7 +16,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         private readonly DataManager dataManager;
-        private readonly IWebHostEnvironment hostingEnvironment;//Хостинг окружение ,сохраняет титульные картинки
+        private readonly IWebHostEnvironment hostingEnvironment;
 
         public HomeController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
         {
@@ -82,13 +82,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(entity);
         }
 
-        /// <summary>
-        /// Редактировать О нас.
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="bigTitleImage"></param>
-        /// <param name="smallTitleImage"></param>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult EditAboutUs(TextField model, IFormFile bigTitleImage, IFormFile smallTitleImage)//Интерфейс представляет собой файл отправленный через http запрос
         {
@@ -118,13 +111,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(entity);
         }
 
-        /// <summary>
-        /// Редактировать События.
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="bigTitleImage"></param>
-        /// <param name="smallTitleImage"></param>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult EditEvents(TextField model, IFormFile bigTitleImage, IFormFile smallTitleImage)
         {
@@ -147,12 +133,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
         }
         #endregion
 
-        /// <summary>
-        /// Сохранить титульную картинку.
-        /// </summary>
-        /// <param name="codeWord">Кодовое слово.</param>
-        /// <param name="titleImage">Титульная картинка.</param>
-        /// <param name="model">Модель.</param>
         private void SaveTitleImage(string codeWord, IFormFile titleImage, TextField model)
         {
             if (codeWord == "AboutUsBigTitleImage" || codeWord == "AboutUsSmallTitleImage")

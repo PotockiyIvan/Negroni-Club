@@ -100,11 +100,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(entity);
         }
 
-        /// <summary>
-        /// Изменить\Добавить категорию блюд.
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult EditDishCategory(DishesСategory model, string titleIconName)
         {
@@ -123,11 +118,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return RedirectToAction(nameof(DishesController.Index), nameof(DishesController).CutController());
         }
 
-        /// <summary>
-        /// Удалить категорию блюд.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult DeleteDishCategory(Guid id)
         {

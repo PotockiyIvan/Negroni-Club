@@ -15,7 +15,7 @@ namespace Negroni_Club.Areas.Admin.Controllers
     public class GalleryController : Controller
     {
         private readonly DataManager dataManager;
-        private readonly IWebHostEnvironment hostingEnvironment;//Сохраняет титульные картинки
+        private readonly IWebHostEnvironment hostingEnvironment;
         public GalleryController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
         {
             this.dataManager = dataManager;
@@ -28,11 +28,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(ViewBag.DataManager);
         }
 
-        /// <summary>
-        /// Создать или редактировать альбом.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult EditAlbum(Guid id)
         {
@@ -40,12 +35,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(entity);
         }
 
-        /// <summary>
-        /// Создать или редактировать альбом.
-        /// </summary>
-        /// <param name="model">Модель альбома.</param>
-        /// <param name="photos">Коллекция фотографий.</param>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult EditAlbum(GalleryAlbum model, List<IFormFile> photos)
         {
@@ -76,10 +65,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
             return View(model);
         }
 
-        /// <summary>
-        /// Удалить альбом.
-        /// </summary>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult DeleteAlbum(Guid id)
         {
@@ -97,12 +82,6 @@ namespace Negroni_Club.Areas.Admin.Controllers
         }
 
 
-        /// <summary>
-        /// Сохранить фотографии.
-        /// </summary>
-        /// <param name="model">Модель альбома.</param>
-        /// <param name="photos">Коллекция фотографий.</param>
-        /// <param name="albumFolderPath">Путь к папке альбома.</param>
         private void SavePhotos(GalleryAlbum model, List<IFormFile> photos, string albumFolderPath)
         {
             foreach (IFormFile photo in photos)
