@@ -32,16 +32,16 @@ namespace Negroni_Club
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //подключаем конфиг из appsettings.json
+            //РїРѕРґРєР»СЋС‡Р°РµРј РєРѕРЅС„РёРі РёР· appsettings.json
             Configuration.Bind("Project", new Config());
 
 
-            //Подключаем нужный функционал приложения в качестве сервисов
-            //В методах указаны интерфейсы,и если понадобится сменить орм систему
-            //Это можно будет сделать здесь щаменив реализацию интерфейса
-            //Само такое подключение делается для того,чтобы через внедрение зависимостей 
-            //Можно было подключать тот или иной сервис,чтобы преложение asp net core само 
-            //находило что к чему и куда внедрить.
+            //РџРѕРґРєР»СЋС‡Р°РµРј РЅСѓР¶РЅС‹Р№ С„СѓРЅРєС†РёРѕРЅР°Р» РїСЂРёР»РѕР¶РµРЅРёСЏ РІ РєР°С‡РµСЃС‚РІРµ СЃРµСЂРІРёСЃРѕРІ
+            //Р’ РјРµС‚РѕРґР°С… СѓРєР°Р·Р°РЅС‹ РёРЅС‚РµСЂС„РµР№СЃС‹,Рё РµСЃР»Рё РїРѕРЅР°РґРѕР±РёС‚СЃСЏ СЃРјРµРЅРёС‚СЊ РѕСЂРј СЃРёСЃС‚РµРјСѓ
+            //Р­С‚Рѕ РјРѕР¶РЅРѕ Р±СѓРґРµС‚ СЃРґРµР»Р°С‚СЊ Р·РґРµСЃСЊ С‰Р°РјРµРЅРёРІ СЂРµР°Р»РёР·Р°С†РёСЋ РёРЅС‚РµСЂС„РµР№СЃР°
+            //РЎР°РјРѕ С‚Р°РєРѕРµ РїРѕРґРєР»СЋС‡РµРЅРёРµ РґРµР»Р°РµС‚СЃСЏ РґР»СЏ С‚РѕРіРѕ,С‡С‚РѕР±С‹ С‡РµСЂРµР· РІРЅРµРґСЂРµРЅРёРµ Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№ 
+            //РњРѕР¶РЅРѕ Р±С‹Р»Рѕ РїРѕРґРєР»СЋС‡Р°С‚СЊ С‚РѕС‚ РёР»Рё РёРЅРѕР№ СЃРµСЂРІРёСЃ,С‡С‚РѕР±С‹ РїСЂРµР»РѕР¶РµРЅРёРµ asp net core СЃР°РјРѕ 
+            //РЅР°С…РѕРґРёР»Рѕ С‡С‚Рѕ Рє С‡РµРјСѓ Рё РєСѓРґР° РІРЅРµРґСЂРёС‚СЊ.
             services.AddTransient<IDishRepository, EFDishRepository>();
             services.AddTransient<IDishesCategoryRepository, EFDishesCategoryRepository>();
             services.AddTransient<IDishesCategoryRepository, EFDishesCategoryRepository>();
@@ -53,12 +53,12 @@ namespace Negroni_Club
             services.AddTransient<DataManager>();
 
 
-            //Подключаем контекст БД в свойствах указываем что используем sql server и в качестве аргумента
-            //передаем строку подключения ,которая заранее прописана в appsettings.json(чтобы не копировать ее и не ошибиться)
+            //РџРѕРґРєР»СЋС‡Р°РµРј РєРѕРЅС‚РµРєСЃС‚ Р‘Р” РІ СЃРІРѕР№СЃС‚РІР°С… СѓРєР°Р·С‹РІР°РµРј С‡С‚Рѕ РёСЃРїРѕР»СЊР·СѓРµРј sql server Рё РІ РєР°С‡РµСЃС‚РІРµ Р°СЂРіСѓРјРµРЅС‚Р°
+            //РїРµСЂРµРґР°РµРј СЃС‚СЂРѕРєСѓ РїРѕРґРєР»СЋС‡РµРЅРёСЏ ,РєРѕС‚РѕСЂР°СЏ Р·Р°СЂР°РЅРµРµ РїСЂРѕРїРёСЃР°РЅР° РІ appsettings.json(С‡С‚РѕР±С‹ РЅРµ РєРѕРїРёСЂРѕРІР°С‚СЊ РµРµ Рё РЅРµ РѕС€РёР±РёС‚СЊСЃСЏ)
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Config.ConnectionString));
 
 
-            //настраиваем identity систему
+            //РЅР°СЃС‚СЂР°РёРІР°РµРј identity СЃРёСЃС‚РµРјСѓ
             services.AddIdentity<IdentityUser, IdentityRole>(opts =>
             {
                 opts.User.RequireUniqueEmail = true;
@@ -70,34 +70,34 @@ namespace Negroni_Club
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 
-            //настраиваем authentication cookie
+            //РЅР°СЃС‚СЂР°РёРІР°РµРј authentication cookie
             services.ConfigureApplicationCookie(options =>
             {
-                options.Cookie.Name = "NegroniClubAuth";//Название Cookie
-                options.Cookie.HttpOnly = true;//Свойства делющее cookie недоступным на клиентской стороне
-                options.LoginPath = "/account/login";//Путь к контроллеру и действию login для авторизации при помощи cookie
-                options.AccessDeniedPath = "/account/accessdenied";//Путь в случае запрета доступа
+                options.Cookie.Name = "NegroniClubAuth";//РќР°Р·РІР°РЅРёРµ Cookie
+                options.Cookie.HttpOnly = true;//РЎРІРѕР№СЃС‚РІР° РґРµР»СЋС‰РµРµ cookie РЅРµРґРѕСЃС‚СѓРїРЅС‹Рј РЅР° РєР»РёРµРЅС‚СЃРєРѕР№ СЃС‚РѕСЂРѕРЅРµ
+                options.LoginPath = "/account/login";//РџСѓС‚СЊ Рє РєРѕРЅС‚СЂРѕР»Р»РµСЂСѓ Рё РґРµР№СЃС‚РІРёСЋ login РґР»СЏ Р°РІС‚РѕСЂРёР·Р°С†РёРё РїСЂРё РїРѕРјРѕС‰Рё cookie
+                options.AccessDeniedPath = "/account/accessdenied";//РџСѓС‚СЊ РІ СЃР»СѓС‡Р°Рµ Р·Р°РїСЂРµС‚Р° РґРѕСЃС‚СѓРїР°
                 options.SlidingExpiration = true;
             });
 
 
 
-            /*настраиваем политику авторизации для AdminArea ,суть в том
-              что мы требуем от пользователя роль админ,и только имея эту роль
-              он авторизуется и получит доступ в AdminArea*/
+            /*РЅР°СЃС‚СЂР°РёРІР°РµРј РїРѕР»РёС‚РёРєСѓ Р°РІС‚РѕСЂРёР·Р°С†РёРё РґР»СЏ AdminArea ,СЃСѓС‚СЊ РІ С‚РѕРј
+              С‡С‚Рѕ РјС‹ С‚СЂРµР±СѓРµРј РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЂРѕР»СЊ Р°РґРјРёРЅ,Рё С‚РѕР»СЊРєРѕ РёРјРµСЏ СЌС‚Сѓ СЂРѕР»СЊ
+              РѕРЅ Р°РІС‚РѕСЂРёР·СѓРµС‚СЃСЏ Рё РїРѕР»СѓС‡РёС‚ РґРѕСЃС‚СѓРї РІ AdminArea*/
             services.AddAuthorization(x =>
             {
                 x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
             });
 
-            //!!!!!!!!!Добавленна поддержка контроллеров и представлений MVC!!!!!!!!!!
+            //!!!!!!!!!Р”РѕР±Р°РІР»РµРЅРЅР° РїРѕРґРґРµСЂР¶РєР° РєРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ Рё РїСЂРµРґСЃС‚Р°РІР»РµРЅРёР№ MVC!!!!!!!!!!
             services.AddControllersWithViews(x =>
             {
-                //Добавляем соглашение для AdminArea
+                //Р”РѕР±Р°РІР»СЏРµРј СЃРѕРіР»Р°С€РµРЅРёРµ РґР»СЏ AdminArea
                 x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
             })
 
-            //Выставляем совместимость с asp.net core 3.0
+            //Р’С‹СЃС‚Р°РІР»СЏРµРј СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚СЊ СЃ asp.net core 3.0
             .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
 
             services.AddImageSharp();
@@ -106,11 +106,11 @@ namespace Negroni_Club
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //!!!!!!! порядок регистрации middleware очень важен,ВСЕГДА ПОДКЛЮЧАЙ В НУДНОМ ПОРЯДКЕ!!!!!!!!
-            //Например авторизация и аутентификация должны быть подключены после подключения routing 
-            //но до конкретного определения маршрутов UseEndpoints
+            //!!!!!!! РїРѕСЂСЏРґРѕРє СЂРµРіРёСЃС‚СЂР°С†РёРё middleware РѕС‡РµРЅСЊ РІР°Р¶РµРЅ,Р’РЎР•Р“Р”Рђ РџРћР”РљР›Р®Р§РђР™ Р’ РќРЈР”РќРћРњ РџРћР РЇР”РљР•!!!!!!!!
+            //РќР°РїСЂРёРјРµСЂ Р°РІС‚РѕСЂРёР·Р°С†РёСЏ Рё Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЏ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РїРѕРґРєР»СЋС‡РµРЅС‹ РїРѕСЃР»Рµ РїРѕРґРєР»СЋС‡РµРЅРёСЏ routing 
+            //РЅРѕ РґРѕ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РѕРїСЂРµРґРµР»РµРЅРёСЏ РјР°СЂС€СЂСѓС‚РѕРІ UseEndpoints
 
-            //Если мы в процессе разработки,покажет полную инф об ошибке 
+            //Р•СЃР»Рё РјС‹ РІ РїСЂРѕС†РµСЃСЃРµ СЂР°Р·СЂР°Р±РѕС‚РєРё,РїРѕРєР°Р¶РµС‚ РїРѕР»РЅСѓСЋ РёРЅС„ РѕР± РѕС€РёР±РєРµ 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -124,26 +124,26 @@ namespace Negroni_Club
             app.UseHttpsRedirection();
 
             app.UseImageSharp();
-            //Подключаем использование статических файлов (css,js и тд)
+            //РџРѕРґРєР»СЋС‡Р°РµРј РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЃС‚Р°С‚РёС‡РµСЃРєРёС… С„Р°Р№Р»РѕРІ (css,js Рё С‚Рґ)
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            //Подключаем куки
+            //РџРѕРґРєР»СЋС‡Р°РµРј РєСѓРєРё
             app.UseCookiePolicy();
 
-            //Подключаем аутентификацию
+            //РџРѕРґРєР»СЋС‡Р°РµРј Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЋ
             app.UseAuthentication();
 
-            //Подключаем авторизацию
+            //РџРѕРґРєР»СЋС‡Р°РµРј Р°РІС‚РѕСЂРёР·Р°С†РёСЋ
             app.UseAuthorization();
 
-            //регистриуруем нужные нам маршруты (ендпоинты)
+            //СЂРµРіРёСЃС‚СЂРёСѓСЂСѓРµРј РЅСѓР¶РЅС‹Рµ РЅР°Рј РјР°СЂС€СЂСѓС‚С‹ (РµРЅРґРїРѕРёРЅС‚С‹)
             app.UseEndpoints(endpoints =>
             {
-                //Маршрут для администратора
+                //РњР°СЂС€СЂСѓС‚ РґР»СЏ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°
                 endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                //Дефолтеый маршрут
+                //Р”РµС„РѕР»С‚РµС‹Р№ РјР°СЂС€СЂСѓС‚
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
 
